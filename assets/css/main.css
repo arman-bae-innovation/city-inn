@@ -271,6 +271,28 @@ footer{
 
 /* MOBILE START-------------------------------------------------------- */
 @media screen and (max-width: 600px) {
+
+
+
+.resBox{
+  flex-direction: column;
+
+}
+.resBoxImage{
+  border-radius: 20px 20px 0px 0px;
+}
+.resBoxDetail{
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+  margin-top: -20px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-wrap: wrap;
+}
+
+
   .aboutImage, .aboutImageBack{
     height: 180px;
   }
