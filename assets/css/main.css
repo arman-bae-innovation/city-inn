@@ -17,6 +17,7 @@
 a{
   text-decoration: none;
   color: green;
+  transition: .3s;
 }
 .btn{
   letter-spacing: 2px;
@@ -177,7 +178,7 @@ a{
 }
 footer{
   margin-top: -100px;
-  background-color: #222;
+  /* background-color: #222; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -270,7 +271,7 @@ footer{
 }
 .room-badge{
   color: #000;
-  background-color: #fff;
+  background-color: #EEEEEF;
   padding: 3px 15px;
   border-radius: 30px;
   text-wrap: nowrap;
@@ -284,6 +285,12 @@ footer{
 
 .tooltip-arrow::before {
   border-top-color: #EEEEEF !important;
+}
+.room-facilities-icon i{
+  font-size: 22px;
+}
+.hover-underline:hover{
+  text-decoration: underline;
 }
 
 
