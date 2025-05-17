@@ -373,7 +373,8 @@ footer{
   opacity: 1;
   color: green;
 }
-.slider-three .slick-slide {
+
+.slick-slide {
   padding: 0px 10px;
 }
 /* SLICK SLIDER END  */
