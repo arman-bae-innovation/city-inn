@@ -30,6 +30,7 @@ a{
 .topTitle{
   color: green;
   letter-spacing: 5px;
+  font-weight: 700;
 }
 .mainTitle{
   font-weight: 400;
@@ -266,6 +267,23 @@ footer{
   margin-left: 0px;
   margin-right: -100px; 
   z-index: 2;
+}
+.room-badge{
+  color: #000;
+  background-color: #fff;
+  padding: 3px 15px;
+  border-radius: 30px;
+  text-wrap: nowrap;
+  font-size: 12px;
+}
+.tooltip-inner {
+  background-color: #fff !important;
+  color: #000 !important;
+  box-shadow: 0px 3px 5px 0px #000;
+}
+
+.tooltip-arrow::before {
+  border-top-color: #EEEEEF !important;
 }
 
 
