@@ -7,6 +7,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // SLICK SLIDER START
 
+// slider-two
+$(document).ready(function(){
+  $('.slider-two').slick({
+
+    dots: true,
+    arrows: false,
+
+    infinite: true,
+    speed: 300,
+
+    slidesToShow: 2,
+    slidesToScroll: 1,
+
+    autoplay: false,
+    autoplaySpeed: 2000,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+
+  });
+});
 // slider-three
 $(document).ready(function(){
   $('.slider-three').slick({
