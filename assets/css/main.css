@@ -344,3 +344,36 @@ footer{
   }
 }
 /* MOBILE END-------------------------------------------------------- */
+
+
+
+/* SLICK SLIDER START  */
+.slick-prev, .slick-next {
+  width: 25px;
+  height: 25px;
+  background: transparent;
+}
+.slick-prev { 
+  left: -25px; 
+}
+.slick-next { 
+  right: -25px; 
+}
+.slick-prev:before, .slick-next:before {
+  font-size: 22px;
+  color: green;
+}
+
+.slick-dots li button:before {
+  font-size: 20px;
+  opacity: .5;
+  color: black;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: green;
+}
+.slider-three .slick-slide {
+  margin: 0px 10px;
+}
+/* SLICK SLIDER END  */
