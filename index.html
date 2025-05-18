@@ -608,7 +608,7 @@
                       <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
                     </div>
                     <div class="py-3">
-                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#roomReadMore">Read More <i class="bi bi-arrow-right-short"></i></a>
                     </div>
                     <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
                   </div>
@@ -771,6 +771,7 @@
                 </div>
               </div>
 
+
               <!-- <div class="col-md-4 mb-4">
                 <div class="card" style="border-radius: 20px;">
                   <img src="./assets/img/rooms/6.webp" class="card-img-top" style="border-radius: 20px 20px 0px 0px;" alt="...">
@@ -804,6 +805,25 @@
         </div>
       </div>
     </section>
+
+    <!-- roomReadMore -->
+    <div class="modal fade" id="roomReadMore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section id="testimonial" class="testimonial py-5">
       <div class="container py-5">
@@ -1152,16 +1172,5 @@
     <!-- custom js -->
     <script src="./assets/js/main.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarIcon = document.getElementById('navbar-icon');
-        navbarToggler.addEventListener('click', function() {
-          navbarIcon.classList.toggle('bi-list');
-          navbarIcon.classList.toggle('bi-x-lg');
-        });
-      });
-    </script>
-    
   </body>
 </html>

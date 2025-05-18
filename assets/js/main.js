@@ -1,8 +1,20 @@
 
-// tooltip
 document.addEventListener('DOMContentLoaded', function () {
+
+  // TOOLTIP START 
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+  // TOOLTIP END 
+
+  // NAV MENU TOGGOLER START 
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarIcon = document.getElementById('navbar-icon');
+  navbarToggler.addEventListener('click', function() {
+    navbarIcon.classList.toggle('bi-list');
+    navbarIcon.classList.toggle('bi-x-lg');
+  });
+  // NAV MENU TOGGOLER END
+
 });
 
 // SLICK SLIDER START
