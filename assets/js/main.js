@@ -14,7 +14,7 @@ $(document).ready(function(){
     dots: true,
     arrows: false,
 
-    infinite: true,
+    infinite: false,
     speed: 300,
 
     slidesToShow: 2,
@@ -47,7 +47,7 @@ $(document).ready(function(){
     dots: true,
     arrows: false,
 
-    infinite: true,
+    infinite: false,
     speed: 300,
 
     slidesToShow: 3,
@@ -108,3 +108,7 @@ $(document).ready(function(){
 });
 
 // SLICK SLIDER END 
+
+
+
+

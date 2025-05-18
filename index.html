@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/main.css">
 
   </head>
@@ -528,7 +529,7 @@
       </div>
     </section>
 
-    <section style="background-color: #EEEEEF;">
+    <section id="newRoom" style="background-color: #EEEEEF;">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-md-12">
@@ -536,9 +537,34 @@
 
               <div class="col-md-4 mb-4">
                 <div class="card" style="border-radius: 20px;">
-                  <img src="./assets/img/rooms/6.webp" class="card-img-top" style="border-radius: 20px 20px 0px 0px;" alt="...">
+                  <div id="carouselRoom1" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="room-carousel-indicators carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/1.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom1" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom1" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                   <div class="card-body">
-                    <h4 class="card-title fw-bold">Superior Room</h4>
+                    <h4 class="card-title fw-bold">Superior Room1</h4>
                     <div class="mb-3">
                       <span class="room-badge">28 m²</span>
                       <span class="room-badge">2 adults</span>
@@ -554,10 +580,6 @@
                       <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
                       <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
                     </div>
-                    <!-- Minibar
-                    Iron and ironing board
-                    Professional hair dryer -->
-
                     <div class="py-3">
                       <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
                     </div>
@@ -566,6 +588,163 @@
                 </div>
               </div>
               <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom2" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="room-carousel-indicators carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/1.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom2" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom2" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Superior Room2</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom3" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="room-carousel-indicators carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/1.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom3" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom3" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Superior Room3</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom4" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/1.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom4" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom4" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Superior Room4</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="col-md-4 mb-4">
                 <div class="card" style="border-radius: 20px;">
                   <img src="./assets/img/rooms/6.webp" class="card-img-top" style="border-radius: 20px 20px 0px 0px;" alt="...">
                   <div class="card-body">
@@ -585,79 +764,13 @@
                       <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
                       <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
                     </div>
-                    <!-- Minibar
-                    Iron and ironing board
-                    Professional hair dryer -->
-
                     <div class="py-3">
                       <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
                     </div>
                     <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-4 mb-4">
-                <div class="card" style="border-radius: 20px;">
-                  <img src="./assets/img/rooms/6.webp" class="card-img-top" style="border-radius: 20px 20px 0px 0px;" alt="...">
-                  <div class="card-body">
-                    <h4 class="card-title fw-bold">Business Class Room</h4>
-                    <div class="mb-3">
-                      <span class="room-badge">28 m²</span>
-                      <span class="room-badge">2 adults</span>
-                      <span class="room-badge">2 double or 1 king</span>
-                    </div>
-                    <p class="mb-1">Main amenities</p>
-                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
-                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
-                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
-                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
-                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
-                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
-                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
-                      <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
-                    </div>
-                    <!-- Minibar
-                    Iron and ironing board
-                    Professional hair dryer -->
-
-                    <div class="py-3">
-                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
-                    </div>
-                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-4">
-                <div class="card" style="border-radius: 20px;">
-                  <img src="./assets/img/rooms/6.webp" class="card-img-top" style="border-radius: 20px 20px 0px 0px;" alt="...">
-                  <div class="card-body">
-                    <h4 class="card-title fw-bold">Suite</h4>
-                    <div class="mb-3">
-                      <span class="room-badge">28 m²</span>
-                      <span class="room-badge">2 adults</span>
-                      <span class="room-badge">2 double or 1 king</span>
-                    </div>
-                    <p class="mb-1">Main amenities</p>
-                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
-                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
-                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
-                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
-                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
-                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
-                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
-                      <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
-                    </div>
-                    <!-- Minibar
-                    Iron and ironing board
-                    Professional hair dryer -->
-
-                    <div class="py-3">
-                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
-                    </div>
-                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
-                  </div>
-                </div>
-              </div>
+              </div> -->
 
             </div>
           </div>
@@ -746,16 +859,6 @@
               <div class="resBoxDetail p-4 text-md-start text-center">
                 <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2024</p>
                 <h4 class="py-2">ORCHID</h4>
-                <!-- <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3" data-aos="zoom-in">
-            <div class="resBox">
-              <div class="resBoxImage" style="background-image: url('./assets/img/restaurants/0.webp');"></div>
-              <div class="resBoxDetail p-4 text-md-start text-center">
-                <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2025</p>
-                <h4 class="py-2">COOMIMG SOON ...</h4>
                 <!-- <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a> -->
               </div>
             </div>
@@ -966,23 +1069,29 @@
             </a>
           </div>
           <div class="col-md-2 mt-md-0 mt-4">
-            <p class="fw-bold">Quick Link</p> 
+            <p class="footer-heading">Quick Link</p> 
+            <p class="footer-p"><a href="#" class="footer-link">Accommodation</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Restaurant</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Event's</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Tourism</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Gallery</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">About</a></p>
           </div>
           <div class="col-md-3 mt-md-0 mt-4">
-            <p class="fw-bold">Pages</p> 
-            <p class="my-0 text-secondary">Book Your Hotel Now</p>
-            <p class="my-0 text-secondary">View Jobs On Resort TNC</p>
-            <p class="my-0 text-secondary">View Our Facilites</p>
-            <p class="my-0 text-secondary">Our Customer Review</p>
-            <p class="my-0 text-secondary">Meet The Owners</p>
+            <p class="footer-heading">Pages</p> 
+            <p class="footer-p">Book Your Hotel Now</p>
+            <p class="footer-p">View Jobs On Resort TNC</p>
+            <p class="footer-p">View Our Facilites</p>
+            <p class="footer-p">Our Customer Review</p>
+            <p class="footer-p">Meet The Owners</p>
           </div>
           <div class="col-md-4 mt-md-0 mt-4">
-            <p class="fw-bold">Recent News</p> 
-            <p class="my-0 text-secondary">Discover And Book A Wide Range Of Hotels</p>
-            <p class="my-0 text-secondary">Late Check-Out Option</p>
-            <p class="my-0 text-secondary">In-Room Dining Local Tour Experience</p>
-            <p class="my-0 text-secondary">Late Check-Out Option Welcome Packge</p>
-            <p class="my-0 text-secondary">Kid-Friendly Amenities Wellness Retreat</p>
+            <p class="footer-heading">Recent News</p> 
+            <p class="footer-p">Discover And Book A Wide Range Of Hotels</p>
+            <p class="footer-p">Late Check-Out Option</p>
+            <p class="footer-p">In-Room Dining Local Tour Experience</p>
+            <p class="footer-p">Late Check-Out Option Welcome Packge</p>
+            <p class="footer-p">Kid-Friendly Amenities Wellness Retreat</p>
           </div>
         </div>
       </div>
@@ -1013,6 +1122,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init({offset: 200,duration: 500,});</script>
 
+    <!-- custom js -->
     <script src="./assets/js/main.js"></script>
 
   </body>
