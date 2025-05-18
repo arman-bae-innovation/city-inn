@@ -110,5 +110,92 @@ $(document).ready(function(){
 // SLICK SLIDER END 
 
 
+// THEME CHANGER START
+function themeChanger() {
+  var SetTheme = document.body;
+  SetTheme.classList.toggle("dark-mode");
+  var theme;
+  var icon = document.getElementById("themeIcon");
+  if (SetTheme.classList.contains("dark-mode")) {
+    console.log("Dark mode");
+    theme = "DARK";
+    icon.classList.remove("bi-moon-stars-fill");
+    icon.classList.add("bi-brightness-high-fill");
+  } else {
+    console.log("Light mode");
+    theme = "LIGHT";
+    icon.classList.remove("bi-brightness-high-fill");
+    icon.classList.add("bi-moon-stars-fill");
+  }
+  localStorage.setItem("PageTheme", JSON.stringify(theme));
+}
+document.addEventListener('DOMContentLoaded', (event) => {
+  let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
+  var icon = document.getElementById("themeIcon");
+  if (GetTheme === "DARK") {
+    document.body.classList.add("dark-mode");
+    icon.classList.remove("bi-moon-stars-fill");
+    icon.classList.add("bi-brightness-high-fill");
+  } else {
+    document.body.classList.remove("dark-mode");
+    icon.classList.remove("bi-brightness-high-fill");
+    icon.classList.add("bi-moon-stars-fill");
+  }
+});
+// THEME CHANGER END
+
+// LIVE CLOCK START
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const hour12 = hours % 12 || 12;
+
+  const paddedMinutes = minutes.toString().padStart(2, '0');
+  const paddedSeconds = seconds.toString().padStart(2, '0');
+  
+  const timeString = `${hour12}:${paddedMinutes}:${paddedSeconds} ${ampm}`;
+  document.getElementById('live-clock').textContent = timeString;
+}
+setInterval(updateClock, 1000);
+updateClock();
+// LIVE CLOCK END
 
 
+// AUTO THEME CHANGE FOR TIME START 
+function autoThemeSwitch() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const icon = document.getElementById("themeIcon");
+  const isDark = document.body.classList.contains("dark-mode");
+
+  const currentTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+  if (currentTime === "6:00:00" && isDark) {
+    document.body.classList.remove("dark-mode");
+    icon.classList.remove("bi-brightness-high-fill");
+    icon.classList.add("bi-moon-stars-fill");
+    localStorage.setItem("PageTheme", JSON.stringify("LIGHT"));
+    console.log("Switched to LIGHT theme");
+  }
+
+  if (currentTime === "18:00:00" && !isDark) {
+    document.body.classList.add("dark-mode");
+    icon.classList.remove("bi-moon-stars-fill");
+    icon.classList.add("bi-brightness-high-fill");
+    localStorage.setItem("PageTheme", JSON.stringify("DARK"));
+    console.log("Switched to DARK theme");
+  }
+}
+
+setInterval(() => {
+  updateClock();
+  autoThemeSwitch();
+}, 1000);
+// AUTO THEME CHANGE FOR TIME END 
