@@ -1,0 +1,104 @@
+@media screen and (max-width: 600px) {
+
+.resBox{
+  flex-direction: column;
+
+}
+.resBoxImage{
+  border-radius: 20px 20px 0px 0px;
+}
+.resBoxDetail{
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+  margin-top: -20px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-wrap: wrap;
+}
+
+
+  .aboutImage, .aboutImageBack{
+    height: 180px;
+  }
+  .statBox{
+    border-right: none;
+    border-bottom: 1px solid green;
+    padding: 20px 0px;
+  }
+  .experienceBox{
+    flex-direction: column;
+  }
+  .experienceBoxAfter{
+    margin-top: -100px;
+    margin-left: 0px;
+    width: 90%;
+  }
+  .abcb{ 
+    margin-left: 0px;
+    margin-right: 0px; 
+  }
+  footer{
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+.gallery1-left{
+  margin-bottom: 10px;
+  height: 300px;
+  border-radius: 30px 30px 0px 0px; 
+}
+.gallery1-top{
+  height: 300px;
+  margin-bottom: 10px; 
+}
+.gallery1-bottom{
+  height: 300px;
+}
+.gallery1-right{
+  margin-top: 10px;
+  height: 300px; 
+  border-radius: 0px 0px 30px 30px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/*
+
+Beli
+
+Executive Suite
+City Suite
+
+Suite Couple
+Suite Single
+Suite Twin
+
+Deluxe Couple
+Deluxe Single
+Deluxe Twin
+Deluxe Family
+
+Standard Couple
+standard Single
+Standard Twin
+Standard Three bed
+
+*/
