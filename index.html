@@ -35,7 +35,7 @@
           <img src="./assets/img/logo.jpg" alt="...">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <i id="navbar-icon" class="bi bi-list fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
@@ -1152,5 +1152,16 @@
     <!-- custom js -->
     <script src="./assets/js/main.js"></script>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarIcon = document.getElementById('navbar-icon');
+        navbarToggler.addEventListener('click', function() {
+          navbarIcon.classList.toggle('bi-list');
+          navbarIcon.classList.toggle('bi-x-lg');
+        });
+      });
+    </script>
+    
   </body>
 </html>

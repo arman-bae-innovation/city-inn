@@ -427,3 +427,14 @@ footer{
   color: white; 
   padding: 5px 10px;
 }
+
+.navbar-toggler{
+  color: #1F8B48;
+  background: transparent;
+  border: none;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+}
