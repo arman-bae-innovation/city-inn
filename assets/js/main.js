@@ -127,8 +127,8 @@ function updateThemeByTime() {
   const now = new Date();
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-  const darkModeEnd = 13 * 60 + 50;
-  const darkModeStart = 13 * 60 + 51;
+  const darkModeEnd = 13 * 60 + 59;
+  const darkModeStart = 14 * 60 + 0;
 
   const isDarkTime = currentMinutes >= darkModeStart || currentMinutes < darkModeEnd;
 
