@@ -11,7 +11,7 @@
   background-color: var(--navbar-bg);
 }
 .navbar-brand img{
-  height: 50px;
+  height: 70px;
   width: auto;
 }
 .nav-link{
@@ -437,4 +437,8 @@ footer{
     text-decoration: none;
     outline: 0;
     box-shadow: none;
+}
+.read-more-right{
+  height: 75vh;
+  overflow-y: scroll;
 }

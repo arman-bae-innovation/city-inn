@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// SLICK SLIDER START --------
+// SLICK SLIDER START
 
 // slider-two
 $(document).ready(function(){
@@ -119,21 +119,72 @@ $(document).ready(function(){
   });
 });
 
-// SLICK SLIDER END ---------
+// SLICK SLIDER END 
 
 
 
-function updateThemeByTime() {
+
+// LIVE CLOCK START
+
+
+function updateClock() {
   const now = new Date();
-  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
 
-  const darkModeEnd = 13 * 60 + 50;
-  const darkModeStart = 13 * 60 + 51;
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const hour12 = hours % 12 || 12;
 
-  const isDarkTime = currentMinutes >= darkModeStart || currentMinutes < darkModeEnd;
+  const paddedMinutes = minutes.toString().padStart(2, '0');
+  const paddedSeconds = seconds.toString().padStart(2, '0');
+  
+  const timeString = `${hour12}:${paddedMinutes}:${paddedSeconds} ${ampm}`;
+  document.getElementById('live-clock').textContent = timeString;
+}
+setInterval(updateClock, 1000);
+updateClock();
 
-  document.documentElement.classList.toggle('dark-mode', isDarkTime);
+
+// LIVE CLOCK END
+
+
+// AUTO THEME CHANGE FOR TIME START 
+
+
+function autoThemeSwitch() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const icon = document.getElementById("themeIcon");
+  const isDark = document.body.classList.contains("dark-mode");
+
+  const currentTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+  if (currentTime === "6:00:00" && isDark) {
+    document.body.classList.remove("dark-mode");
+    icon.classList.remove("bi-brightness-high-fill");
+    icon.classList.add("bi-moon-stars-fill");
+    localStorage.setItem("PageTheme", JSON.stringify("LIGHT"));
+    console.log("Switched to LIGHT theme");
+  }
+
+  if (currentTime === "11:34:00" && !isDark) {
+    document.body.classList.add("dark-mode");
+    icon.classList.remove("bi-moon-stars-fill");
+    icon.classList.add("bi-brightness-high-fill");
+    localStorage.setItem("PageTheme", JSON.stringify("DARK"));
+    console.log("Switched to DARK theme");
+  }
 }
 
-updateThemeByTime();
-setInterval(updateThemeByTime, 1000);
+setInterval(() => {
+  updateClock();
+  autoThemeSwitch();
+}, 1000);
+
+
+// AUTO THEME CHANGE FOR TIME END 
+
