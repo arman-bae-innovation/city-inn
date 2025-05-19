@@ -122,39 +122,7 @@ $(document).ready(function(){
 // SLICK SLIDER END 
 
 
-// THEME CHANGER START
-function themeChanger() {
-  var SetTheme = document.body;
-  SetTheme.classList.toggle("dark-mode");
-  var theme;
-  var icon = document.getElementById("themeIcon");
-  if (SetTheme.classList.contains("dark-mode")) {
-    console.log("Dark mode");
-    theme = "DARK";
-    icon.classList.remove("bi-moon-stars-fill");
-    icon.classList.add("bi-brightness-high-fill");
-  } else {
-    console.log("Light mode");
-    theme = "LIGHT";
-    icon.classList.remove("bi-brightness-high-fill");
-    icon.classList.add("bi-moon-stars-fill");
-  }
-  localStorage.setItem("PageTheme", JSON.stringify(theme));
-}
-document.addEventListener('DOMContentLoaded', (event) => {
-  let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
-  var icon = document.getElementById("themeIcon");
-  if (GetTheme === "DARK") {
-    document.body.classList.add("dark-mode");
-    icon.classList.remove("bi-moon-stars-fill");
-    icon.classList.add("bi-brightness-high-fill");
-  } else {
-    document.body.classList.remove("dark-mode");
-    icon.classList.remove("bi-brightness-high-fill");
-    icon.classList.add("bi-moon-stars-fill");
-  }
-});
-// THEME CHANGER END
+
 
 // LIVE CLOCK START
 function updateClock() {
@@ -197,7 +165,7 @@ function autoThemeSwitch() {
     console.log("Switched to LIGHT theme");
   }
 
-  if (currentTime === "10:50:00" && !isDark) {
+  if (currentTime === "11:20:00" && !isDark) {
     document.body.classList.add("dark-mode");
     icon.classList.remove("bi-moon-stars-fill");
     icon.classList.add("bi-brightness-high-fill");
