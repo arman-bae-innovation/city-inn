@@ -122,18 +122,17 @@ $(document).ready(function(){
 // SLICK SLIDER END ---------
 
 
-
+// Time-Based Theme Switch START 
 function updateThemeByTime() {
   const now = new Date();
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-  const darkModeEnd = 14 * 60 + 14;
-  const darkModeStart = 14 * 60 + 15;
-
+  const darkModeEnd = 6 * 60 + 0;
+  const darkModeStart = 19 * 60 + 0;
   const isDarkTime = currentMinutes >= darkModeStart || currentMinutes < darkModeEnd;
-
   document.documentElement.classList.toggle('dark-mode', isDarkTime);
 }
-
 updateThemeByTime();
 setInterval(updateThemeByTime, 1000);
+// Time-Based Theme Switch END 
+
+
