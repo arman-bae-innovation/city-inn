@@ -136,3 +136,39 @@ setInterval(updateThemeByTime, 1000);
 // Time-Based Theme Switch END 
 
 
+// AUTO TITLE CHANGE GO ANOTHER TAB START
+
+// const originalTitle = document.title;
+// document.addEventListener("visibilitychange", function () {
+//   if (document.hidden) {
+//     document.title = "Come back to City inn Ltd!";
+//   } else {
+//     document.title = originalTitle;
+//   }
+// });
+
+// AUTO TITLE CHANGE GO ANOTHER TAB END 
+
+
+
+
+// AUTO TITLE CHANGE GO ANOTHER TAB START
+
+const originalTitle = document.title;
+const altTitle1 = "❤ Relax. You deserve it!";
+const altTitle2 = "🔥 Ready to explore?";
+let toggleInterval;
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+    let toggle = false;
+    toggleInterval = setInterval(() => {
+      document.title = toggle ? altTitle1 : altTitle2;
+      toggle = !toggle;
+    }, 2000);
+  } else {
+    clearInterval(toggleInterval);
+    document.title = originalTitle;
+  }
+});
+
+// AUTO TITLE CHANGE GO ANOTHER TAB END 
