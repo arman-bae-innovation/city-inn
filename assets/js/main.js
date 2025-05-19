@@ -197,7 +197,7 @@ function autoThemeSwitch() {
     console.log("Switched to LIGHT theme");
   }
 
-  if (currentTime === "18:00:00" && !isDark) {
+  if (currentTime === "10:50:00" && !isDark) {
     document.body.classList.add("dark-mode");
     icon.classList.remove("bi-moon-stars-fill");
     icon.classList.add("bi-brightness-high-fill");
