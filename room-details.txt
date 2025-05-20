@@ -1,0 +1,52 @@
+Beli
+
+Executive Suite
+City Suite
+
+Suite Couple
+Suite Single
+Suite Twin
+
+Deluxe Couple
+Deluxe Single
+Deluxe Twin
+Deluxe Family
+
+Standard Couple
+standard Single
+Standard Twin
+Standard Three bed
+-------------------
+1
+Platinum Suite - Single - 12000
+Platinum Suite - Couple - 12000
+
+2
+Executive Suite - Single - 7000
+Executive Suite - Couple - 7000
+
+3
+Deluxe - Single - 2800
+Deluxe - Couple - 3500
+Deluxe - Twin - 3800
+Deluxe - Family - 5800
+
+4
+Super Deluxe - Single - 3500
+Super Deluxe - Couple - 4500
+Super Deluxe - Twin - 4800
+
+5
+City Suite - Single - 4000
+City Suite - Couple - 5000
+
+6
+Suite - Single - 4500
+Suite - Couple - 5500
+Suite - Twin - 5800
+
+7
+Classic - Single - 2200
+Classic - Couple - 2800
+Classic - Twin - 3000
+Classic - Three Bed - 4200
