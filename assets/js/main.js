@@ -24,7 +24,7 @@ $(document).ready(function(){
   $('.slider-two').slick({
 
     dots: true,
-    arrows: false,
+    arrows: true,
 
     infinite: false,
     speed: 300,
@@ -45,6 +45,7 @@ $(document).ready(function(){
       {
         breakpoint: 600,
         settings: {
+          arrows: false,
           slidesToShow: 1,
         }
       }
@@ -57,7 +58,7 @@ $(document).ready(function(){
   $('.slider-three').slick({
 
     dots: true,
-    arrows: false,
+    arrows: true,
 
     infinite: false,
     speed: 300,
@@ -78,6 +79,7 @@ $(document).ready(function(){
       {
         breakpoint: 600,
         settings: {
+          arrows: false,
           slidesToShow: 1,
         }
       }
@@ -90,7 +92,7 @@ $(document).ready(function(){
   $('.slider-four').slick({
 
     dots: true,
-    arrows: false,
+    arrows: true,
 
     infinite: true,
     speed: 300,
@@ -111,6 +113,7 @@ $(document).ready(function(){
       {
         breakpoint: 600,
         settings: {
+          arrows: false,
           slidesToShow: 1,
         }
       }
