@@ -33,6 +33,26 @@
   </head>
   <body>
 
+    <div style="position: fixed; left: 10px; bottom: 10px; background: green; z-index: 999; padding: 10px 20px; color: #fff; text-align: center;">
+      <div>Live Time: <span id="liveTime">--:--</span></div>
+      <div>Khulna Time: <span id="khulnaTime">--:--</span></div>
+    </div>
+    <script>
+      function updateTimes() {
+        const userDate = new Date();
+        const khulnaDate = new Date(
+          userDate.toLocaleString("en-US", { timeZone: "Asia/Dhaka" })
+        );
+        const formatTime = (date) =>
+          date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById("liveTime").textContent = formatTime(userDate);
+        document.getElementById("khulnaTime").textContent = formatTime(khulnaDate);
+      }
+      updateTimes();
+      setInterval(updateTimes, 1000);
+    </script>
+
+
     <nav class="navbar navbar-expand-lg sticky-top py-0">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">

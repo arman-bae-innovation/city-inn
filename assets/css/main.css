@@ -472,14 +472,14 @@ footer{
   background-size: cover;
 }
 .restaurantBox11:hover{
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/0.webp') !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/restaurants/0.webp') !important;
 }
 .restaurantBox12:hover{
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/1.webp') !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/restaurants/1.webp') !important;
 }
 .restaurantBox13:hover{
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/2.webp') !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/restaurants/2.webp') !important;
 }
 .restaurantBox14:hover{
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/3.webp') !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/restaurants/3.webp') !important;
 }
