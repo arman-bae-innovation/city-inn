@@ -67,7 +67,22 @@
   overflow-y: none;
 }
 
+.restaurantBox1{
+  color:#fff;
+}
 
+.restaurantBox11{
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/0.webp') !important;
+}
+.restaurantBox12{
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/1.webp') !important;
+}
+.restaurantBox13{
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/2.webp') !important;
+}
+.restaurantBox14{
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/restaurants/3.webp') !important;
+}
 
 
 
