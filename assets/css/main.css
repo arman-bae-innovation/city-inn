@@ -465,6 +465,7 @@ footer{
 }
 .restaurantBox1:hover{
   transition: .3s;
+  cursor: pointer;
   color: #fff;
   background-position: center;
   background-repeat: no-repeat;
