@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Currency Switcher - BDT Static</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .service {
+      border-top: 1px solid #eee;
+      padding: 15px 0;
+    }
+
+    .price {
+      font-size: 1.2em;
+      color: #007BFF;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our Services</h1>
+    <label for="currency-selector">Select Currency:</label>
+    <select id="currency-selector"></select>
+    <div id="error" class="error"></div>
+
+    <div class="service">
+      <h2>Web Design</h2>
+      <p class="price" data-usd="1">Price: $1</p>
+    </div>
+
+    <div class="service">
+      <h2>SEO Optimization</h2>
+      <p class="price" data-usd="150">Price: $150</p>
+    </div>
+
+    <div class="service">
+      <h2>Monthly Maintenance</h2>
+      <p class="price" data-usd="100">Price: $100</p>
+    </div>
+  </div>
+
+  <script>
+    const currencySelector = document.getElementById("currency-selector");
+    const priceElements = document.querySelectorAll(".price");
+    const errorEl = document.getElementById("error");
+
+    const baseCurrency = "USD";
+    let exchangeRates = {};
+
+    const currencyList = [
+      "USD", "EUR", "GBP", "INR", "JPY", "CAD", "AUD", "CNY", "BRL", "ZAR",
+      "BDT", "NOK", "MXN", "RUB", "SGD"
+    ];
+
+    const currencyNames = {
+      USD: "US Dollar", EUR: "Euro", GBP: "British Pound", INR: "Indian Rupee",
+      JPY: "Japanese Yen", CAD: "Canadian Dollar", AUD: "Australian Dollar",
+      CNY: "Chinese Yuan", BRL: "Brazilian Real", ZAR: "South African Rand",
+      BDT: "Bangladeshi Taka", NOK: "Norwegian Krone", MXN: "Mexican Peso",
+      RUB: "Russian Ruble", SGD: "Singapore Dollar"
+    };
+
+    const fallbackRates = {
+      BDT: 121.00 // 1 USD = 108 BDT (example rate, update as needed)
+    };
+
+    function populateCurrencyOptions() {
+      currencyList.forEach(code => {
+        const option = document.createElement("option");
+        option.value = code;
+        option.textContent = `${code} (${currencyNames[code] || "Unknown"})`;
+        if (code === baseCurrency) option.selected = true;
+        currencySelector.appendChild(option);
+      });
+    }
+
+    async function fetchExchangeRates() {
+      try {
+        const res = await fetch("https://api.frankfurter.app/latest?from=USD");
+        if (!res.ok) throw new Error("Network response was not ok");
+        const data = await res.json();
+
+        exchangeRates = data.rates;
+        exchangeRates["USD"] = 1; // Add base currency manually
+
+        // Add fallback rates for unsupported currencies
+        for (const [code, rate] of Object.entries(fallbackRates)) {
+          if (!(code in exchangeRates)) {
+            exchangeRates[code] = rate;
+          }
+        }
+
+        updatePrices(currencySelector.value);
+      } catch (err) {
+        showError("Failed to fetch exchange rates. Please try again later.");
+        console.error("Error fetching rates:", err);
+      }
+    }
+
+    function updatePrices(currency) {
+      const rate = exchangeRates[currency];
+      if (!rate) {
+        showError("Invalid currency selected.");
+        return;
+      }
+
+      priceElements.forEach(priceEl => {
+        const usdPrice = parseFloat(priceEl.dataset.usd);
+        const converted = (usdPrice * rate).toFixed(2);
+        const symbol = getCurrencySymbol(currency);
+        priceEl.textContent = `Price: ${symbol}${converted}`;
+      });
+    }
+
+    function getCurrencySymbol(code) {
+      const symbols = {
+        USD: "$", EUR: "€", GBP: "£", INR: "₹", JPY: "¥", CAD: "$",
+        AUD: "$", CNY: "¥", BRL: "R$", ZAR: "R", BDT: "৳", NOK: "kr",
+        MXN: "$", RUB: "₽", SGD: "$"
+      };
+      return symbols[code] || code + " ";
+    }
+
+    function showError(message) {
+      errorEl.textContent = message;
+      setTimeout(() => {
+        errorEl.textContent = "";
+      }, 5000);
+    }
+
+    currencySelector.addEventListener("change", () => {
+      updatePrices(currencySelector.value);
+    });
+
+    (async function init() {
+      populateCurrencyOptions();
+      await fetchExchangeRates();
+    })();
+  </script>
+</body>
+</html>
