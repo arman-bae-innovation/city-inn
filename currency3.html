@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currency Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .converter {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #007BFF;
+      text-align: center;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="converter">
+    <h2>Currency Converter</h2>
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" />
+
+    <label for="from">From Currency</label>
+    <select id="from"></select>
+
+    <label for="to">To Currency</label>
+    <select id="to"></select>
+
+    <div class="result" id="result">Converted amount will appear here</div>
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    const amountInput = document.getElementById("amount");
+    const fromSelect = document.getElementById("from");
+    const toSelect = document.getElementById("to");
+    const resultDiv = document.getElementById("result");
+    const errorDiv = document.getElementById("error");
+
+    let conversionRates = {};
+
+    async function fetchCurrencies() {
+      try {
+        const res = await fetch("https://open.er-api.com/v6/latest/USD");
+        const data = await res.json();
+
+        if (data.result !== "success") throw new Error("API failed");
+
+        conversionRates = data.conversion_rates;
+
+        for (let code in conversionRates) {
+          const optionFrom = document.createElement("option");
+          const optionTo = document.createElement("option");
+          optionFrom.value = optionTo.value = code;
+          optionFrom.textContent = optionTo.textContent = code;
+          fromSelect.appendChild(optionFrom);
+          toSelect.appendChild(optionTo);
+        }
+
+        fromSelect.value = "USD";
+        toSelect.value = "EUR";
+
+        convertCurrency();
+      } catch (err) {
+        console.error(err);
+        errorDiv.textContent = "Could not fetch currency data.";
+      }
+    }
+
+    function convertCurrency() {
+      errorDiv.textContent = "";
+      const amount = parseFloat(amountInput.value);
+      const from = fromSelect.value;
+      const to = toSelect.value;
+
+      if (!amount || isNaN(amount)) {
+        resultDiv.textContent = "Enter a valid amount.";
+        return;
+      }
+
+      if (!conversionRates[from] || !conversionRates[to]) {
+        resultDiv.textContent = "Conversion not available.";
+        return;
+      }
+
+      const usdAmount = amount / conversionRates[from];
+      const convertedAmount = usdAmount * conversionRates[to];
+      resultDiv.textContent = `${amount} ${from} = ${convertedAmount.toFixed(2)} ${to}`;
+    }
+
+    amountInput.addEventListener("input", convertCurrency);
+    fromSelect.addEventListener("change", convertCurrency);
+    toSelect.addEventListener("change", convertCurrency);
+
+    fetchCurrencies();
+  </script>
+</body>
+</html>
