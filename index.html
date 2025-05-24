@@ -33,7 +33,7 @@
   </head>
   <body>
 
-    <div style="position: fixed; left: 10px; bottom: 10px; background: green; z-index: 999; padding: 10px 20px; color: #fff; text-align: center;">
+    <div style="font-size: 12px; position: fixed; left: 10px; bottom: 10px; background: green; z-index: 999; padding: 5px 10px; color: #fff; text-align: center;">
       <div>Live Time: <span id="liveTime">--:--</span></div>
       <div>Khulna, BD Time: <span id="khulnaTime">--:--</span></div>
     </div>
@@ -72,7 +72,7 @@
               <a class="nav-link" href="#restaurant">Restaurant</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#events">Meeting's & Event's</a>
+              <a class="nav-link" href="#hall">Meeting's & Event's</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#tourism">Tourism</a>
@@ -158,6 +158,24 @@
         <span class="visually-hidden">Next</span>
       </button> -->
     </div>
+
+    <section id="" class="room-search-section">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card p-5 rounded-pill">
+              <div class="row text-center align-items-center justify-content-center">
+                <div class="col-md-4 mb-md-0 mb-3"><input class="rounded-pill py-2 fs-4 text-center" placeholder="Start Date" id="startDate" /></div>
+                <div class="col-md-4 mb-md-0 mb-3"><input class="rounded-pill py-2 fs-4 text-center" placeholder="End Date" id="endDate" /></div>
+                <div class="col-md-3">
+                  <a href="" class="btn btn-success rounded-pill px-5 fs-3">Search</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="about" class="about py-5" style="background-image: url('./assets/img/aboutBG.png');">
       <div class="container pt-5">
@@ -280,18 +298,18 @@
 
         <div class="row mt-5">
           <div class="col-md-4">
-            <div class="bg-img gallery1-left" style="background-image: url(./assets/img/rooms/Delux\ Twin\ 2.webp);"></div>
+            <div data-aos="flip-left" class="bg-img gallery1-left" style="background-image: url(./assets/img/rooms/Delux\ Twin\ 2.webp);"></div>
           </div>
           <div class="col-md-4">
             <div class="row">
               <div class="col-12">
-                <div class="bg-img gallery1-top" style="background-image: url(./assets/img/rooms/Standard\ Couple\ 2.webp);"></div>
-                <div class="bg-img gallery1-bottom" style="background-image: url(./assets/img/rooms/Deluxe\ Family.webp);"></div>
+                <div data-aos="flip-left" class="bg-img gallery1-top" style="background-image: url(./assets/img/rooms/Standard\ Couple\ 2.webp);"></div>
+                <div data-aos="flip-left" class="bg-img gallery1-bottom" style="background-image: url(./assets/img/rooms/Deluxe\ Family.webp);"></div>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="bg-img gallery1-right" style="background-image: url(./assets/img/rooms/Suite\ Single\ 1.webp);"></div>
+            <div data-aos="flip-left" class="bg-img gallery1-right" style="background-image: url(./assets/img/rooms/Suite\ Single\ 1.webp);"></div>
           </div>
         </div>
 
@@ -753,9 +771,10 @@
             </div>
             <div class="modal-body">
 
-              <div class="row">
+              <div class="row justify-content-around">
 
-                <div class="col-12">
+                <div class="col-md-6"></div>
+                <div class="col-md-5">
                   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                       <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-PlatinumSuite-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-PlatinumSuite-Single" type="button" role="tab" aria-controls="pills-PlatinumSuite-Single" aria-selected="true">Single</button>
@@ -769,8 +788,8 @@
                   <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-PlatinumSuite-Single" role="tabpanel" aria-labelledby="pills-PlatinumSuite-Single-tab" tabindex="0">
                       
-                      <div class="row">
-                        <div class="col-md-7 mb-md-0 mb-4">
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
                           <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image">
                         </div>
                         <div class="col-md-5 read-more-right">
@@ -812,8 +831,8 @@
                     </div>
                     <div class="tab-pane fade" id="pills-PlatinumSuite-Couple" role="tabpanel" aria-labelledby="pills-PlatinumSuite-Couple-tab" tabindex="0">
                       
-                      <div class="row">
-                        <div class="col-md-7 mb-md-0 mb-4">
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
                           <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Couple 2.webp" alt="image">
                         </div>
                         <div class="col-md-5 read-more-right">
@@ -1738,6 +1757,99 @@
       </div>
     </section>
 
+    <section id="hall" class="testimonial py-5">
+      <div class="container py-5">
+        <div class="row justify-content-start" data-aos="zoom-in">
+          <div class="col-md-6 text-md-start text-center">
+            <span class="topTitle">LUXURY HOTEL</span>
+            <h3 class="mainTitle mt-3 text-white">Conference Hall, Meeting Venue and Banquet Hall with Others Logistic</h3>
+          </div>
+        </div>
+        <div class="row mt-4 justify-content-around text-md-start text-center">
+
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+              <div class="testimonialCard p-4">
+                <div class="row align-items-center">
+                  <div class="col-12">
+                    <h5 class="mt-0 mb-3 text-white">City Convention Hall</h5>
+                    <p class="my-0 text-secondary">South Plaza : 400 (+/-) Person</p>
+                    <p class="my-0 text-secondary">Round Table (1:8) : 300 Person</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">City Convention Hall</h5>
+                  <p class="my-0 text-secondary">North Plaza : 250 (+/-) Person</p>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 152 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Conference Hall BELI</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Conference Hall BRIDGE</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Conference Hall CONCEPT</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Meeting Room SWEET LILY</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <section id="blog" class="py-5">
       <div class="container">
         <div class="row justify-content-between align-items-end" data-aos="zoom-in">
@@ -1798,13 +1910,13 @@
         <div class="row">
           <div class="col-md-5">
             <form action="" class="contactBox px-4 py-5" data-aos="zoom-in">
-              <div class="row justify-content-center">
+              <div class="row justify-content-center pt-5">
                 <div class="col-md-12">
                   <span class="topTitle">APPOINMENT NOW</span>
                   <h3 class="mainTitle mt-2">Contact Us</h3>
                 </div>
               </div>
-              <div class="row mt-3 justify-content-center">
+              <div class="row mt-3 justify-content-center pb-5">
 
                 <div class="col-md-6 mb-3">
                   <input type="text" name="name" id="name" placeholder="Your Name" class="form-control rounded-pill px-4" required>
@@ -1836,7 +1948,7 @@
             <div>
               <iframe class="py-3" width="100%" height="250" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.496869882947!2d89.5510777!3d22.821099699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff918e9c716897%3A0x706b6e76a7793626!2sCity%20Inn%20Limited!5e0!3m2!1sen!2sbd!4v1747806520906!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="row align-items-center justify-content-around">
+            <!-- <div class="row align-items-center justify-content-around">
               <div class="col-2">
                 <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
                   <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-3 p-2 rounded-circle"></i>
@@ -1844,7 +1956,20 @@
               </div>
               <div class="col-8">
                 <p class="my-0">Need help?</p>
-                <h4>+880 1309 817 440</h4>
+                <h4>+880 1711 298 501</h4>
+              </div>
+            </div> -->
+            <div class="row justify-content-center mt-2">
+              <div class="col-md-11">
+                <h5>Need help?</h5> 
+                <a href="tel:+8801711298501" class="fs-4 text-dark">
+                  <i class="bi bi-telephone-fill pe-3"></i>
+                  +880 1711 298 501
+                </a> <br> <br>
+                <a href="mailto:cityinnltd@gmail.com" class="fs-4 text-dark">
+                  <i class="bi bi-envelope-fill pe-3"></i>
+                  cityinnltd@gmail.com
+                </a> <br> 
               </div>
             </div>
           </div>
@@ -1924,6 +2049,27 @@
     <!-- custom js -->
     <script src="./assets/js/main.js"></script>
 
+    <!-- date picker js -->
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+    </script>
 
 
   </body>
