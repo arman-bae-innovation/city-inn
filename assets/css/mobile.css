@@ -85,6 +85,18 @@
 }
 
 
+.accor-box{
+  position: static;
+}
+.accor-left{
+  width: 100%;
+  position: static;
+}
+.accor-right{
+  width: 100%;
+  position: static; 
+  margin-top: 10px;
+}
 
 
 

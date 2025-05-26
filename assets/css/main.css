@@ -490,3 +490,20 @@ footer{
 .gj-datepicker button{
   display: none;
 }
+.accor-box{
+  width: 100%; 
+  height: 100vh; 
+  position: relative;
+}
+.accor-left{
+  width: 60%;
+  position: absolute; 
+  left: 0; 
+  top: 0;
+}
+.accor-right{
+  width: 60%; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0;
+}
