@@ -507,3 +507,38 @@ footer{
   right: 0; 
   bottom: 0;
 }
+
+.restaurantBoxOuter2{
+  transition: ease-in-out .2s;
+}
+.restaurantBoxOuter2:hover{
+  transform: scale(1.2);
+}
+.restaurantBoxOuter2:hover .restaurantBoxOuter2-layer{
+  display: block;
+  margin-top: -400px;
+}
+.restaurantBoxOuter2:hover .restaurantBoxOuter2-link{
+  margin-top: -220px;
+}
+.restaurantBoxOuter2-image{
+  width: 100%; 
+  height: 400px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+.restaurantBoxOuter2-layer{
+  width: 100%; 
+  height: 400px; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); 
+  display: none;
+}
+.restaurantBoxOuter2-link{
+  text-align: center;
+  display: block;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0px 0px 2px black;
+}
