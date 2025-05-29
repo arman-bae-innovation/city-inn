@@ -155,8 +155,43 @@ $(document).ready(function(){
 
   });
 });
+// slider-restaurant
+$(document).ready(function(){
+  $('.slider-restaurant').slick({
+
+    dots: true,
+    arrows: true,
+
+    infinite: false,
+    speed: 300,
+
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+    autoplay: false,
+    autoplaySpeed: 2000,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+        }
+      }
+    ]
+
+  });
+});
 
 // SLICK SLIDER END ---------
+
 
 
 // Time-Based Theme Switch START 
