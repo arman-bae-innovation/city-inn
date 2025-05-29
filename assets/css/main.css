@@ -311,19 +311,19 @@ footer{
 
 /* SLICK SLIDER START  */
 .slick-prev, .slick-next {
-  width: 25px;
-  height: 25px;
+  width: 0px;
+  height: 0px;
   background: transparent;
 }
 .slick-prev { 
-  left: -25px; 
+  left: -40px; 
 }
 .slick-next { 
-  right: -25px; 
+  right: 0px; 
 }
 .slick-prev:before, .slick-next:before {
-  font-size: 22px;
-  color: green;
+  font-size: 40px;
+  color: #38A352;
 }
 
 .slick-dots li button:before {
@@ -456,12 +456,14 @@ footer{
   background-repeat: no-repeat;
   background-size: cover;
   color:transparent;
-  font-size: 33px;
+  font-size: 26px;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   transition: .3s;
+  padding: 20px;
 }
 .restaurantBox1:hover{
   transition: .3s;
@@ -541,4 +543,7 @@ footer{
   color: #fff;
   font-weight: 500;
   text-shadow: 0px 0px 2px black;
+}
+.search-card{
+  border-radius: 9999px;
 }
