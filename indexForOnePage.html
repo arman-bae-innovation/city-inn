@@ -1,0 +1,2617 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>City inn Ltd</title>
+    <link rel="shortcut icon" href="./assets/img/fav2.png" type="image/x-icon">
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.min.css" integrity="sha512-8hM9a+2hrLBhOuB3uiy+QIXBsu6Qk+snsP1CboFQW6pdt/yYz0IcDp/+CGv5m39r9doGUc/zw6aBpyLF6XFgzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" integrity="sha512-DzC7h7+bDlpXPDQsX/0fShhf1dLxXlHuhPBkBo/5wJWRoTU6YL7moeiNoej6q3wh5ti78C57Tu1JwTNlcgHSjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- slik slider css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css">
+
+  </head>
+  <body>
+
+    <div style="font-size: 10px; position: fixed; left: 10px; bottom: 10px; z-index: 999; color: #fff; text-align: center;">
+      <div class="mb-1 bg-green p-1 rounded"><span id="liveTime">--:--</span> <br> Live Time</div>
+      <div class="bg-green p-1 rounded"><span id="khulnaTime">--:--</span> <br> Khulna, BD Time</div>
+    </div>
+    <script>
+      function updateTimes() {
+        const userDate = new Date();
+        const khulnaDate = new Date(
+          userDate.toLocaleString("en-US", { timeZone: "Asia/Dhaka" })
+        );
+        const formatTime = (date) =>
+          date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById("liveTime").textContent = formatTime(userDate);
+        document.getElementById("khulnaTime").textContent = formatTime(khulnaDate);
+      }
+      updateTimes();
+      setInterval(updateTimes, 1000);
+    </script>
+
+    <nav class="navbar navbar-expand-lg sticky-top py-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/img/logo2.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i id="navbar-icon" class="bi bi-list fs-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#room">Accommodation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#restaurant">Dining</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hall">Event's</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tourism">Tourism</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-success rounded-pill px-3">
+            Contact
+            <i class="bi bi-arrow-right-short"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9" aria-label="Slide 9"></button>
+      </div>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/1.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/2.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/3.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/4.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/5.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/6.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/7.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/8.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/9.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/10.webp');">
+          <div class="carousel-caption">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h5 class="fs-1" style=" font-weight: 400;">Welcome to City Inn Ltd.</h5>
+                <p class="d-none d-md-block">
+                  City Inn Ltd. is the most modern facilitated international standard hotel and holds a prime location and booming area in Khulna City the southern part of Bangladesh offer all the luxuries, comfort and personal coziness with adequate services of our skilled male and female young energetic team with warm hospitality in the traditional way, inviting atmosphere and premier service sources to satisfy business leisure travelers alike. 
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-4 py-3">
+                <a href="" class="btn btn-outline-success rounded-pill px-3 text-white">
+                VIEW DETAILS
+                <i class="fa-regular fa-circle-play ms-2"></i>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-2">
+                    <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                      <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-2 p-1 rounded-circle"></i>
+                    </a> 
+                  </div>
+                  <div class="col-8 text-start">
+                    <p class="my-0">Need help?</p>
+                    <h5 class="text-nowrap">+880 1309 817 440</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="carousel-item" style="background-image: url('./assets/img/banner/2.webp');">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div> -->
+
+      </div>
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> -->
+    </div>
+
+    <section id="" class="room-search-section">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card p-5 search-card">
+              <div class="row text-center align-items-center justify-content-center">
+                <div class="col-md-4 mb-md-0 mb-3"><input placeholder="Check-in" class="rounded-pill py-2 fs-4 text-center" id="startDate" /></div>
+                <div class="col-md-4 mb-md-0 mb-3"><input placeholder="Check-out" class="rounded-pill py-2 fs-4 text-center" id="endDate" /></div>
+                <div class="col-md-3">
+                  <a href="" class="btn btn-success rounded-pill px-5 fs-3">Search</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="room" style="background-color: #EEEEEF;">
+      <div class="container py-5">
+        <div class="row justify-content-center" data-aos="zoom-in">
+          <div class="col-md-6 text-center">
+            <span class="topTitle">LUXURY HOTEL</span>
+            <h3 class="mainTitle mt-3">Experience top-notch best on hospitality at our hotels</h3>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-12">
+            <div class="slider-three">
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom1" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="room-carousel-indicators carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Couple 2.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Delux Twin 2.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom1" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom1" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Platinum Suite</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <!-- <i class="fa-solid fa-bath"></i> -->
+                      <!-- <i class="fa-solid fa-shower"></i> -->
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#PlatinumSuite">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom2" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="room-carousel-indicators carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Standard Couple 2.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Standard Single.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Standard Twin 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom2" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom2" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Executive Suite</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#ExecutiveSuite">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom4" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Standard Single.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Suite Twin 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom4" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom4" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Suite</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Suite">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom4" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Standard Single.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Suite Twin 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom4" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom4" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">City Suite</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#CitySuite">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom4" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Standard Single.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Suite Twin 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom4" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom4" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Super Deluxe</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#SuperDeluxe">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom3" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="room-carousel-indicators carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Suite Couple 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Suite Twin 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Suite Twin 4.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom3" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom3" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Deluxe</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <div id="carouselRoom4" class="room-carousel carousel slide" data-bs-wrap="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselRoom4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="room-carousel-inner carousel-inner">
+                      <div class="room-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Standard Single.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Suite Twin 1.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="room-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoom4" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoom4" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Classic</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Classic">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/6.webp" class="card-img-top" style="border-radius: 20px 20px 0px 0px;" alt="...">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">Deluxe Room</h4>
+                    <div class="mb-3">
+                      <span class="room-badge">28 m²</span>
+                      <span class="room-badge">2 adults</span>
+                      <span class="room-badge">2 double or 1 king</span>
+                    </div>
+                    <p class="mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                      <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
+                      <i class="bi bi-trash3" data-bs-toggle="tooltip" title="Recycle bin"></i>
+                    </div>
+                    <div class="py-3">
+                      <a  class="text-uppercase fw-bold text-success hover-underline">Read More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                    <a  class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PlatinumSuite -->
+      <div class="modal fade" id="PlatinumSuite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Platinum Suite</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row justify-content-around">
+
+                <div class="col-md-6"></div>
+                <div class="col-md-5">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-PlatinumSuite-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-PlatinumSuite-Single" type="button" role="tab" aria-controls="pills-PlatinumSuite-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-PlatinumSuite-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-PlatinumSuite-Couple" type="button" role="tab" aria-controls="pills-PlatinumSuite-Couple" aria-selected="false">Couple</button>
+                    </li>
+                  </ul>
+                </div>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-PlatinumSuite-Single" role="tabpanel" aria-labelledby="pills-PlatinumSuite-Single-tab" tabindex="0">
+                      
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
+                          <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image">
+                        </div>
+                        <div class="col-md-5 read-more-right">
+                          <p>1 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row text-center">
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-wifi fs-3"></i>
+                                <p>Free Wi-Fi</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-cup-hot fs-3"></i>
+                                <p>Coffee and tea facilities</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-plugin fs-3"></i>
+                                <p>Professional hair dryer</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-display fs-3"></i>
+                                <p>TV with mirror casting</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-window-sidebar fs-3"></i>
+                                <p>Work desk</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-key fs-3"></i>
+                                <p>In-room safe</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-basket fs-3"></i>
+                                <p>Recycle bin</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="tab-pane fade" id="pills-PlatinumSuite-Couple" role="tabpanel" aria-labelledby="pills-PlatinumSuite-Couple-tab" tabindex="0">
+                      
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
+                          <img class="img-fluid rounded" src="./assets/img/rooms/Delux Twin 2.webp" alt="image">
+                        </div>
+                        <div class="col-md-5 read-more-right">
+                          <p>2 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row text-center">
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-wifi fs-3"></i>
+                                <p>Free Wi-Fi</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-cup-hot fs-3"></i>
+                                <p>Coffee and tea facilities</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-plugin fs-3"></i>
+                                <p>Professional hair dryer</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-display fs-3"></i>
+                                <p>TV with mirror casting</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-window-sidebar fs-3"></i>
+                                <p>Work desk</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-key fs-3"></i>
+                                <p>In-room safe</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-basket fs-3"></i>
+                                <p>Recycle bin</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ExecutiveSuite -->
+      <div class="modal fade" id="ExecutiveSuite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7 mb-md-0 mb-4">
+
+                  <!-- <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image"> -->
+
+                  <div id="readMoreImage" class="carousel slide" data-bs-wrap="false">
+                    <div class="carousel-inner">
+                      <div class="read-more-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>1 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>2 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>3 / 3</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#readMoreImage" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#readMoreImage" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                </div>
+                <div class="col-md-5 read-more-right">
+                  <h2 class="mb-4">Executive Suite</h2>
+                  <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-ExecutiveSuite-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-ExecutiveSuite-Single" type="button" role="tab" aria-controls="pills-ExecutiveSuite-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-ExecutiveSuite-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-ExecutiveSuite-Couple" type="button" role="tab" aria-controls="pills-ExecutiveSuite-Couple" aria-selected="false">Couple</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-ExecutiveSuite-Single" role="tabpanel" aria-labelledby="pills-ExecutiveSuite-Single-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-ExecutiveSuite-Couple" role="tabpanel" aria-labelledby="pills-ExecutiveSuite-Couple-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                  </div>
+                  <h5 class="mt-4 mb-3">Main amenities</h5>
+                  <div class="row text-center">
+
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-wifi fs-3"></i>
+                        <p>Free Wi-Fi</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-cup-hot fs-3"></i>
+                        <p>Coffee and tea facilities</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-plugin fs-3"></i>
+                        <p>Professional hair dryer</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-display fs-3"></i>
+                        <p>TV with mirror casting</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-window-sidebar fs-3"></i>
+                        <p>Work desk</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-key fs-3"></i>
+                        <p>In-room safe</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-basket fs-3"></i>
+                        <p>Recycle bin</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Deluxe -->
+      <div class="modal fade" id="Deluxe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Platinum Suite</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row justify-content-around">
+
+                <div class="col-md-6"></div>
+                <div class="col-md-5">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-Deluxe-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-Deluxe-Single" type="button" role="tab" aria-controls="pills-Deluxe-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Deluxe-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-Deluxe-Couple" type="button" role="tab" aria-controls="pills-Deluxe-Couple" aria-selected="false">Couple</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Deluxe-Twin-tab" data-bs-toggle="pill" data-bs-target="#pills-Deluxe-Twin" type="button" role="tab" aria-controls="pills-Deluxe-Twin" aria-selected="false">Twin</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Deluxe-Family-tab" data-bs-toggle="pill" data-bs-target="#pills-Deluxe-Family" type="button" role="tab" aria-controls="pills-Deluxe-Family" aria-selected="false">Family</button>
+                    </li>
+                  </ul>
+                </div>
+
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-Deluxe-Single" role="tabpanel" aria-labelledby="pills-Deluxe-Single-tab" tabindex="0">
+                      
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
+                          <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image">
+                        </div>
+                        <div class="col-md-5 read-more-right">
+                          <p>1 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row text-center">
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-wifi fs-3"></i>
+                                <p>Free Wi-Fi</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-cup-hot fs-3"></i>
+                                <p>Coffee and tea facilities</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-plugin fs-3"></i>
+                                <p>Professional hair dryer</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-display fs-3"></i>
+                                <p>TV with mirror casting</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-window-sidebar fs-3"></i>
+                                <p>Work desk</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-key fs-3"></i>
+                                <p>In-room safe</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-basket fs-3"></i>
+                                <p>Recycle bin</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="tab-pane fade" id="pills-Deluxe-Couple" role="tabpanel" aria-labelledby="pills-Deluxe-Couple-tab" tabindex="0">
+                      
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
+                          <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Couple 2.webp" alt="image">
+                        </div>
+                        <div class="col-md-5 read-more-right">
+                          <p>2 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row text-center">
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-wifi fs-3"></i>
+                                <p>Free Wi-Fi</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-cup-hot fs-3"></i>
+                                <p>Coffee and tea facilities</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-plugin fs-3"></i>
+                                <p>Professional hair dryer</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-display fs-3"></i>
+                                <p>TV with mirror casting</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-window-sidebar fs-3"></i>
+                                <p>Work desk</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-key fs-3"></i>
+                                <p>In-room safe</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-basket fs-3"></i>
+                                <p>Recycle bin</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="tab-pane fade" id="pills-Deluxe-Twin" role="tabpanel" aria-labelledby="pills-Deluxe-Twin-tab" tabindex="0">
+                      
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
+                          <img class="img-fluid rounded" src="./assets/img/rooms/Delux Twin 2.webp" alt="image">
+                        </div>
+                        <div class="col-md-5 read-more-right">
+                          <p>2 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row text-center">
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-wifi fs-3"></i>
+                                <p>Free Wi-Fi</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-cup-hot fs-3"></i>
+                                <p>Coffee and tea facilities</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-plugin fs-3"></i>
+                                <p>Professional hair dryer</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-display fs-3"></i>
+                                <p>TV with mirror casting</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-window-sidebar fs-3"></i>
+                                <p>Work desk</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-key fs-3"></i>
+                                <p>In-room safe</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-basket fs-3"></i>
+                                <p>Recycle bin</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="tab-pane fade" id="pills-Deluxe-Family" role="tabpanel" aria-labelledby="pills-Deluxe-Family-tab" tabindex="0">
+                      
+                      <div class="row justify-content-around">
+                        <div class="col-md-6 mb-md-0 mb-4">
+                          <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Family.webp" alt="image">
+                        </div>
+                        <div class="col-md-5 read-more-right">
+                          <p>2 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row text-center">
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-wifi fs-3"></i>
+                                <p>Free Wi-Fi</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-cup-hot fs-3"></i>
+                                <p>Coffee and tea facilities</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-plugin fs-3"></i>
+                                <p>Professional hair dryer</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-display fs-3"></i>
+                                <p>TV with mirror casting</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-window-sidebar fs-3"></i>
+                                <p>Work desk</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-key fs-3"></i>
+                                <p>In-room safe</p>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <i class="bi bi-basket fs-3"></i>
+                                <p>Recycle bin</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SuperDeluxe -->
+      <div class="modal fade" id="SuperDeluxe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7 mb-md-0 mb-4">
+
+                  <!-- <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image"> -->
+
+                  <div id="readMoreImage" class="carousel slide" data-bs-wrap="false">
+                    <div class="carousel-inner">
+                      <div class="read-more-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>1 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>2 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>3 / 3</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#readMoreImage" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#readMoreImage" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                </div>
+                <div class="col-md-5 read-more-right">
+                  <h2 class="mb-4">Super Deluxe</h2>
+                  <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-SuperDeluxe-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-SuperDeluxe-Single" type="button" role="tab" aria-controls="pills-SuperDeluxe-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-SuperDeluxe-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-SuperDeluxe-Couple" type="button" role="tab" aria-controls="pills-SuperDeluxe-Couple" aria-selected="false">Couple</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-SuperDeluxe-Twin-tab" data-bs-toggle="pill" data-bs-target="#pills-SuperDeluxe-Twin" type="button" role="tab" aria-controls="pills-SuperDeluxe-Twin" aria-selected="false">Twin</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-SuperDeluxe-Single" role="tabpanel" aria-labelledby="pills-SuperDeluxe-Single-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-SuperDeluxe-Couple" role="tabpanel" aria-labelledby="pills-SuperDeluxe-Couple-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-SuperDeluxe-Twin" role="tabpanel" aria-labelledby="pills-SuperDeluxe-Twin-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                  </div>
+                  <h5 class="mt-4 mb-3">Main amenities</h5>
+                  <div class="row text-center">
+
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-wifi fs-3"></i>
+                        <p>Free Wi-Fi</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-cup-hot fs-3"></i>
+                        <p>Coffee and tea facilities</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-plugin fs-3"></i>
+                        <p>Professional hair dryer</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-display fs-3"></i>
+                        <p>TV with mirror casting</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-window-sidebar fs-3"></i>
+                        <p>Work desk</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-key fs-3"></i>
+                        <p>In-room safe</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-basket fs-3"></i>
+                        <p>Recycle bin</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CitySuite -->
+      <div class="modal fade" id="CitySuite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7 mb-md-0 mb-4">
+
+                  <!-- <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image"> -->
+
+                  <div id="readMoreImage" class="carousel slide" data-bs-wrap="false">
+                    <div class="carousel-inner">
+                      <div class="read-more-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>1 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>2 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>3 / 3</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#readMoreImage" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#readMoreImage" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                </div>
+                <div class="col-md-5 read-more-right">
+                  <h2 class="mb-4">City Suite</h2>
+                  <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-CitySuite-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-CitySuite-Single" type="button" role="tab" aria-controls="pills-CitySuite-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-CitySuite-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-CitySuite-Couple" type="button" role="tab" aria-controls="pills-CitySuite-Couple" aria-selected="false">Couple</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-CitySuite-Single" role="tabpanel" aria-labelledby="pills-CitySuite-Single-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-CitySuite-Couple" role="tabpanel" aria-labelledby="pills-CitySuite-Couple-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                  </div>
+                  <h5 class="mt-4 mb-3">Main amenities</h5>
+                  <div class="row text-center">
+
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-wifi fs-3"></i>
+                        <p>Free Wi-Fi</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-cup-hot fs-3"></i>
+                        <p>Coffee and tea facilities</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-plugin fs-3"></i>
+                        <p>Professional hair dryer</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-display fs-3"></i>
+                        <p>TV with mirror casting</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-window-sidebar fs-3"></i>
+                        <p>Work desk</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-key fs-3"></i>
+                        <p>In-room safe</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-basket fs-3"></i>
+                        <p>Recycle bin</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Suite -->
+      <div class="modal fade" id="Suite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7 mb-md-0 mb-4">
+
+                  <!-- <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image"> -->
+
+                  <div id="readMoreImage" class="carousel slide" data-bs-wrap="false">
+                    <div class="carousel-inner">
+                      <div class="read-more-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>1 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>2 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>3 / 3</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#readMoreImage" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#readMoreImage" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                </div>
+                <div class="col-md-5 read-more-right">
+                  <h2 class="mb-4">Suite</h2>
+                  <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-Suite-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-Suite-Single" type="button" role="tab" aria-controls="pills-Suite-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Suite-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-Suite-Couple" type="button" role="tab" aria-controls="pills-Suite-Couple" aria-selected="false">Couple</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Suite-Twin-tab" data-bs-toggle="pill" data-bs-target="#pills-Suite-Twin" type="button" role="tab" aria-controls="pills-Suite-Twin" aria-selected="false">Twin</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-Suite-Single" role="tabpanel" aria-labelledby="pills-Suite-Single-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-Suite-Couple" role="tabpanel" aria-labelledby="pills-Suite-Couple-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-Suite-Twin" role="tabpanel" aria-labelledby="pills-Suite-Twin-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                  </div>
+                  <h5 class="mt-4 mb-3">Main amenities</h5>
+                  <div class="row text-center">
+
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-wifi fs-3"></i>
+                        <p>Free Wi-Fi</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-cup-hot fs-3"></i>
+                        <p>Coffee and tea facilities</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-plugin fs-3"></i>
+                        <p>Professional hair dryer</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-display fs-3"></i>
+                        <p>TV with mirror casting</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-window-sidebar fs-3"></i>
+                        <p>Work desk</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-key fs-3"></i>
+                        <p>In-room safe</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-basket fs-3"></i>
+                        <p>Recycle bin</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Classic -->
+      <div class="modal fade" id="Classic" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7 mb-md-0 mb-4">
+
+                  <!-- <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image"> -->
+
+                  <div id="readMoreImage" class="carousel slide" data-bs-wrap="false">
+                    <div class="carousel-inner">
+                      <div class="read-more-carousel-item carousel-item active">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>1 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>2 / 3</h5>
+                        </div>
+                      </div>
+                      <div class="read-more-carousel-item carousel-item">
+                        <img src="./assets/img/rooms/Deluxe Single 1.webp" class="d-block img-fluid" alt="...">
+                        <div class="carousel-caption">
+                          <h5>3 / 3</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#readMoreImage" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#readMoreImage" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                </div>
+                <div class="col-md-5 read-more-right">
+                  <h2 class="mb-4">Classic</h2>
+                  <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-Classic-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-Classic-Single" type="button" role="tab" aria-controls="pills-Classic-Single" aria-selected="true">Single</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Classic-Couple-tab" data-bs-toggle="pill" data-bs-target="#pills-Classic-Couple" type="button" role="tab" aria-controls="pills-Classic-Couple" aria-selected="false">Couple</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Classic-Twin-tab" data-bs-toggle="pill" data-bs-target="#pills-Classic-Twin" type="button" role="tab" aria-controls="pills-Classic-Twin" aria-selected="false">Twin</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link read-more-link rounded-pill px-2 py-0" id="pills-Classic-ThreeBed-tab" data-bs-toggle="pill" data-bs-target="#pills-Classic-ThreeBed" type="button" role="tab" aria-controls="pills-Classic-ThreeBed" aria-selected="false">Three Bed</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-Classic-Single" role="tabpanel" aria-labelledby="pills-Classic-Single-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-Classic-Couple" role="tabpanel" aria-labelledby="pills-Classic-Couple-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-Classic-Twin" role="tabpanel" aria-labelledby="pills-Classic-Twin-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                    <div class="tab-pane fade" id="pills-Classic-ThreeBed" role="tabpanel" aria-labelledby="pills-Classic-ThreeBed-tab" tabindex="0">
+                      Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.
+                    </div>
+                  </div>
+                  <h5 class="mt-4 mb-3">Main amenities</h5>
+                  <div class="row text-center">
+
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-wifi fs-3"></i>
+                        <p>Free Wi-Fi</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-cup-hot fs-3"></i>
+                        <p>Coffee and tea facilities</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-plugin fs-3"></i>
+                        <p>Professional hair dryer</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-display fs-3"></i>
+                        <p>TV with mirror casting</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-window-sidebar fs-3"></i>
+                        <p>Work desk</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-key fs-3"></i>
+                        <p>In-room safe</p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <i class="bi bi-basket fs-3"></i>
+                        <p>Recycle bin</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success px-5 fw-bold text-uppercase rounded-pill">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="restaurant" class="py-5">
+      <div class="container pt-5">
+        <div class="row justify-content-between align-items-end" data-aos="zoom-in">
+          <div class="col-md-5 text-md-start text-center">
+            <span class="topTitle">RECOMMENDED RESTAURANTS</span>
+            <h3 class="mainTitle mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+          </div>
+          <div class="col-md-5 text-md-end text-center">
+            <a href="" class="btn btn-outline-success rounded-pill px-3">
+              VIEW ALL
+              <i class="fa-regular fa-circle-play ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+        <div class="col-md-12 col-10">
+        <div class="row">
+        <div class="slider-restaurant">
+
+          <div class="col-md-3 col-8 px-0 restaurantBoxOuter2">
+            <div class="restaurantBoxOuter2-image" style="background-image: url(./assets/img/restaurants/0.webp);"></div>
+            <div class="restaurantBoxOuter2-layer"></div>
+            <a href="#" class="restaurantBoxOuter2-link">Orchid</a>
+          </div>
+          <div class="col-md-3 col-8 px-0 restaurantBoxOuter2">
+            <div class="restaurantBoxOuter2-image" style="background-image: url(./assets/img/restaurants/1.webp);"></div>
+            <div class="restaurantBoxOuter2-layer"></div>
+            <a href="#" class="restaurantBoxOuter2-link">Coming Soon</a>
+          </div>
+          <div class="col-md-3 col-8 px-0 restaurantBoxOuter2">
+            <div class="restaurantBoxOuter2-image" style="background-image: url(./assets/img/restaurants/2.webp);"></div>
+            <div class="restaurantBoxOuter2-layer"></div>
+            <a href="#" class="restaurantBoxOuter2-link">Coming Soon</a>
+          </div>
+          <div class="col-md-3 col-8 px-0 restaurantBoxOuter2">
+            <div class="restaurantBoxOuter2-image" style="background-image: url(./assets/img/restaurants/3.webp);"></div>
+            <div class="restaurantBoxOuter2-layer"></div>
+            <a href="#" class="restaurantBoxOuter2-link">Coming Soon</a>
+          </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <!-- <div class="row justify-content-center mt-5">
+          <div class="col-12">
+            <div class="slider-two">
+
+              <div class="col-md-6 mb-3" data-aos="zoom-in">
+                <div class="resBox">
+                  <div class="resBoxImage" style="background-image: url('./assets/img/restaurants/1.webp');"></div>
+                  <div class="resBoxDetail p-4 text-md-start text-center">
+                    <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2024</p>
+                    <h4 class="py-2">ORCHID</h4>
+                    <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3" data-aos="zoom-in">
+                <div class="resBox">
+                  <div class="resBoxImage" style="background-image: url('./assets/img/restaurants/0.webp');"></div>
+                  <div class="resBoxDetail p-4 text-md-start text-center">
+                    <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2025</p>
+                    <h4 class="py-2">COOMIMG SOON ...</h4>
+                    <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3" data-aos="zoom-in">
+                <div class="resBox">
+                  <div class="resBoxImage" style="background-image: url('./assets/img/restaurants/0.webp');"></div>
+                  <div class="resBoxDetail p-4 text-md-start text-center">
+                    <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2025</p>
+                    <h4 class="py-2">COOMIMG SOON ...</h4>
+                    <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </section>
+
+    <section id="hall" class="testimonial py-5">
+      <div class="container py-5">
+        <div class="row justify-content-start" data-aos="zoom-in">
+          <div class="col-md-6 text-md-start text-center">
+            <span class="topTitle">LUXURY HOTEL</span>
+            <h3 class="mainTitle mt-3 text-white">Conference Hall, Meeting Venue and Banquet Hall with Others Logistic</h3>
+          </div>
+        </div>
+
+        <!-- <div class="row mt-4 justify-content-around text-md-start text-center">
+
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Hall1">
+              <div class="testimonialCard p-4">
+                <div class="row align-items-center">
+                  <div class="col-12">
+                    <h5 class="mt-0 mb-3 text-white">City Convention Hall</h5>
+                    <p class="my-0 text-secondary">South Plaza : 400 (+/-) Person</p>
+                    <p class="my-0 text-secondary">Round Table (1:8) : 300 Person</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">City Convention Hall</h5>
+                  <p class="my-0 text-secondary">North Plaza : 250 (+/-) Person</p>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 152 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Conference Hall BELI</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Conference Hall BRIDGE</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Conference Hall CONCEPT</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="zoom-in">
+            <a href="https://wa.me/8801711298501" target="_blank">
+            <div class="testimonialCard p-4">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h5 class="mt-0 mb-3 text-white">Meeting Room SWEET LILY</h5>
+                  <p class="my-0 text-secondary">Round Table (1:8) : 80 Person</p>
+                  <p class="my-0 text-secondary">U Setup : 64 Person</p>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+        </div> -->
+
+
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="slider-hall">
+
+              <div class="col-md-3 my-4" data-aos="flip-left">
+                <a href="./hall.html">
+                  <div class="restaurantBox1 restaurantBox11" style="background-image: url('./assets/img/restaurants/0.webp');">
+                  City Convention Hall
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3 my-4" data-aos="flip-left">
+                <a href="./hall.html">
+                <div class="restaurantBox1 restaurantBox12" style="background-image: url('./assets/img/restaurants/1.webp');">
+                  City Convention Hall
+                </div>
+                </a>
+              </div>
+              <div class="col-md-3 my-4" data-aos="flip-left">
+                <a href="./hall.html">
+                <div class="restaurantBox1 restaurantBox13" style="background-image: url('./assets/img/restaurants/2.webp');">
+                  Conference Hall BELI
+                </div>
+                </a>
+              </div>
+              <div class="col-md-3 my-4" data-aos="flip-left">
+                <a href="./hall.html">
+                <div class="restaurantBox1 restaurantBox14" style="background-image: url('./assets/img/restaurants/3.webp');">
+                  Conference Hall BRIDGE
+                </div>
+                </a>
+              </div>
+              <div class="col-md-3 my-4" data-aos="flip-left">
+                <a href="./hall.html">
+                <div class="restaurantBox1 restaurantBox14" style="background-image: url('./assets/img/restaurants/3.webp');">
+                  Conference Hall CONCEPT
+                </div>
+                </a>
+              </div>
+              <div class="col-md-3 my-4" data-aos="flip-left">
+                <a href="./hall.html">
+                <div class="restaurantBox1 restaurantBox14" style="background-image: url('./assets/img/restaurants/3.webp');">
+                  Meeting Room SWEET LILY
+                </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Hall1 -->
+      <div class="modal fade" id="Hall1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="accor-box">
+                      <div class="accor-left">
+                        <img class="img-fluid rounded" src="./assets/img/restaurants/0.webp" alt="image">
+                      </div>
+                      <div class="accor-right">
+                        <div class="card p-md-5 p-3 fs-4">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cumque deserunt harum. Magnam, hic dolorum quos cupiditate veniam provident tempore nulla. Non, aliquid blanditiis nisi ducimus omnis deserunt tempora natus.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- <div class="row">
+                  <div class="col-md-7">
+                    <img class="img-fluid rounded" src="./assets/img/restaurants/0.webp" alt="image">
+                  </div>
+                </div>
+                <div class="row justify-content-end">
+                  <div class="col-md-5">
+                    <div class="card p-4">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum quas aliquid cum maiores, sequi modi perferendis excepturi exercitationem debitis ipsa commodi reprehenderit veritatis eveniet! Dolor ipsum non libero autem quibusdam sequi necessitatibus et alias fuga! Aliquam sapiente maxime dolor.</p>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about py-5" style="background-image: url('./assets/img/aboutBG.png');">
+      <div class="container pt-5">
+        <div class="row justify-content-around align-items-center">
+          <div class="col-md-5 col-10 text-md-start text-center" data-aos="slide-up">
+            <span class="topTitle">ABOUT OUR STORY</span>
+            <h3 class="mainTitle mt-3">Welcome to City Inn LTD.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, eius neque optio ducimus voluptatum eaque temporibus explicabo nisi est numquam, repellendus ad iste quibusdam enim distinctio deserunt a modi velit? Beatae, facilis, fugiat odio error voluptatem minima nulla sint velit quo nobis dolore odit totam. Vitae, cupiditate beatae. Voluptas, atque.</p>
+          </div>
+          <div class="col-md-5 col-8 mt-5">
+          <div class="position-relative" data-aos="flip-left">
+            <div class="aboutImage" style="background-image: url('./assets/img/about1.jpg');">
+            </div>
+            <div class="aboutImageBack">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in">
+          <div class="col-md-6 text-center">
+            <span class="topTitle">LATEST SERVICE</span>
+            <h3 class="mainTitle mt-3">Restaurant Establishments <br>where enjoy a meal</h3>
+          </div>
+        </div>
+        <div class="row mt-5">
+
+          <div class="col-md-4 mb-md-0 mb-3" data-aos="zoom-in">
+            <div class="serviceCard p-4">
+              <div class="row align-items-center mb-4">
+                <div class="col-3 border-end text-center">
+                  <i class="fa-solid fa-bell fs-1 text-success"></i>
+                </div>
+                <div class="col-9 fs-4">Nearby Attractions</div>
+              </div>
+              <p class="fs-14 text-md-start text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, cumque!</p>
+              <div class="row">
+                <div class="col-12 text-md-start text-center">
+                  <a href="" class="btn btn-outline-success rounded-pill px-3">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-3" data-aos="zoom-in">
+            <div class="serviceCard p-4">
+              <div class="row align-items-center mb-4">
+                <div class="col-3 border-end text-center">
+                  <i class="fa-solid fa-money-bill-transfer fs-1 text-success"></i>
+                </div>
+                <div class="col-9 fs-4">Money Exchange</div>
+              </div>
+              <p class="fs-14 text-md-start text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, cumque!</p>
+              <div class="row">
+                <div class="col-12 text-md-start text-center">
+                  <a href="" class="btn btn-outline-success rounded-pill px-3">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-0" data-aos="zoom-in">
+            <div class="serviceCard p-4">
+              <div class="row align-items-center mb-4">
+                <div class="col-3 border-end text-center">
+                  <i class="fa-solid fa-umbrella-beach fs-1 text-success"></i>
+                </div>
+                <div class="col-9 fs-4">Tour Guid Assistance</div>
+              </div>
+              <p class="fs-14 text-md-start text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, cumque!</p>
+              <div class="row">
+                <div class="col-12 text-md-start text-center">
+                  <a href="" class="btn btn-outline-success rounded-pill px-3">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-end" data-aos="zoom-in">
+          <div class="col-md-5 text-md-start text-center text-white">
+            <span class="topTitle">LUXURY HOTEL</span>
+            <h3 class="mainTitle mt-3">Experience top-notch best on hospitality at our hotels</h3>
+          </div>
+          <div class="col-md-5 text-md-end text-center">
+            <a href="" class="btn btn-outline-success rounded-pill px-3">
+              VIEW ALL
+              <i class="fa-regular fa-circle-play ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="row mt-5">
+          <div class="col-12">
+            <div class="slider-four">
+
+              <div class="col-md-3 mb-3" data-aos="flip-left">
+                <div class="galleryBox" style="background-image: url('./assets/img/hotels/Delux\ Twin\ 2.webp');"></div>
+              </div>
+              <div class="col-md-3 mb-3" data-aos="flip-left">
+                <div class="galleryBox" style="background-image: url('./assets/img/hotels/Deluxe\ Family.webp');"></div>
+              </div>
+              <div class="col-md-3 mb-3" data-aos="flip-left">
+                <div class="galleryBox" style="background-image: url('./assets/img/hotels/Suite\ Single\ 1.webp');"></div>
+              </div>
+              <div class="col-md-3 mb-3" data-aos="flip-left">
+                <div class="galleryBox" style="background-image: url('./assets/img/hotels/Suite\ Twin\ 4.webp');"></div>
+              </div>
+
+            </div>
+          </div>
+        </div> -->
+
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div data-aos="flip-left" class="bg-img gallery1-left" style="background-image: url(./assets/img/rooms/Delux\ Twin\ 2.webp);"></div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-12">
+                <div data-aos="flip-left" class="bg-img gallery1-top" style="background-image: url(./assets/img/rooms/Standard\ Couple\ 2.webp);"></div>
+                <div data-aos="flip-left" class="bg-img gallery1-bottom" style="background-image: url(./assets/img/rooms/Deluxe\ Family.webp);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div data-aos="flip-left" class="bg-img gallery1-right" style="background-image: url(./assets/img/rooms/Suite\ Single\ 1.webp);"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="stat" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-md-3 col-10">
+            <div class="statBox">
+              <span class="fs-1">80 +</span> 
+              <span class="mt-md-2 mt-0 ms-3">Dream Stay</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-10">
+            <div class="statBox">
+              <span class="fs-1">98 %</span> 
+              <span class="mt-md-2 mt-0 ms-3">Luxe Lodge</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-10">
+            <div class="statBox">
+              <span class="fs-1">85 %</span> 
+              <span class="mt-md-2 mt-0 ms-3">Complete Work</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-10">
+            <div class="statBox" style="border-right: none; border-bottom: none;">
+              <span class="fs-1">75 +</span> 
+              <span class="mt-md-2 mt-0 ms-3">Team member</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonial" class="testimonial py-5">
+      <div class="container py-5">
+        <div class="row justify-content-start" data-aos="zoom-in">
+          <div class="col-md-5 text-md-start text-center">
+            <span class="topTitle">LUXURY HOTEL</span>
+            <h3 class="mainTitle mt-3 text-white">Experience top-notch best on hospitality at our hotels</h3>
+          </div>
+        </div>
+        <div class="row mt-4 justify-content-around">
+
+          <div class="col-md-5 mb-md-0 mb-3" data-aos="zoom-in">
+            <div class="testimonialCard p-4">
+              <div class="text-warning">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="py-3 fs-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui accusantium reiciendis ad adipisci vero quidem. Quidem enim, provident culpa necessitatibus earum ex explicabo mollitia exercitationem. Et sed odio, molestias cumque obcaecati velit explicabo, quae beatae commodi, sunt unde?</p>
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <h5 class="my-0 text-white">Ranvor Sign</h5>
+                  <p class="my-0">Genearal Manager</p>
+                </div>
+                <div class="col-6 text-end">
+                  <i class="fa-solid fa-quote-right fs-1 text-success"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5" data-aos="zoom-in">
+            <div class="testimonialCard p-4">
+              <div class="text-warning">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="py-3 fs-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui accusantium reiciendis ad adipisci vero quidem. Quidem enim, provident culpa necessitatibus earum ex explicabo mollitia exercitationem. Et sed odio, molestias cumque obcaecati velit explicabo, quae beatae commodi, sunt unde?</p>
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <h5 class="my-0 text-white">John Doe</h5>
+                  <p class="my-0">Client</p>
+                </div>
+                <div class="col-6 text-end">
+                  <i class="fa-solid fa-quote-right fs-1 text-success"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="card p-md-5 p-3">
+              <h3 class="text-center" data-aos="zoom-in">More ways to enjoy your Stay</h3>
+              <div class="row">
+
+                <div class="col-12 my-5">
+                  <div class="experienceBox">
+                    <div data-aos="flip-left" class="experienceBoxBefore order-md-2 order-1" style="background-image: url('./assets/img/facilities/swimming\ pool.webp');"></div>
+                    <div data-aos="flip-right" class="experienceBoxAfter abcb order-md-1 order-2 text-md-start text-center">
+                      <!-- <i class="fa-solid fa-dumbbell bg-success fs-3 p-3 rounded-circle text-white"></i> -->
+                      <i class="fa-solid fa-person-drowning bg-success fs-3 p-3 rounded-circle text-white"></i>
+                      <h3>Swimming Pool</h3>
+                      <p class="py-1 d-md-block d-none">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis illo distinctio ratione repudiandae quidem, modi iste consectetur maiores molestiae in!</p>
+                      <a href="" class="btn btn-outline-success rounded-pill px-3">READ MORE</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mb-5">
+                  <div class="experienceBox">
+                    <div data-aos="flip-left" class="experienceBoxBefore" style="background-image: url('./assets/img/facilities/gymnasium.webp');"></div>
+                    <div data-aos="flip-right" class="experienceBoxAfter text-md-start text-center">
+                      <i class="fa-solid fa-dumbbell bg-success fs-3 p-3 rounded-circle text-white"></i>
+                      <h3>Gymnasium</h3>
+                      <p class="py-1 d-md-block d-none">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis illo distinctio ratione repudiandae quidem, modi iste consectetur maiores molestiae in!</p>
+                      <a href="" class="btn btn-outline-success rounded-pill px-3">READ MORE</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mb-5">
+                  <div class="experienceBox">
+                    <div data-aos="flip-left" class="experienceBoxBefore order-md-2 order-1" style="background-image: url('./assets/img/facilities/restaurant.webp');"></div>
+                    <div data-aos="flip-right" class="experienceBoxAfter abcb order-md-1 order-2 text-md-start text-center">
+                      <!-- <i class="fa-solid fa-dumbbell bg-success fs-3 p-3 rounded-circle text-white"></i> -->
+                      <i class="fa-solid fa-table-cells bg-success fs-3 p-3 rounded-circle text-white"></i>
+                      <h3>Restaurant</h3>
+                      <p class="py-1 d-md-block d-none">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis illo distinctio ratione repudiandae quidem, modi iste consectetur maiores molestiae in!</p>
+                      <a href="" class="btn btn-outline-success rounded-pill px-3">READ MORE</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tourism" class="py-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div id="carouselTourism" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselTourism" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselTourism" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselTourism" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./assets/img/grand holi days.jpg" class="d-block w-100 h-100" alt="...">
+                  <div class="carousel-caption">
+                    <a href="https://grandholidaysbd.com/" class="btn btn-success rounded-pill py-3 px-5">Book Now</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/img/grand holi days.jpg" class="d-block w-100 h-100" alt="...">
+                  <div class="carousel-caption">
+                    <a href="https://grandholidaysbd.com/" class="btn btn-success rounded-pill py-3 px-5">Book Now</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/img/grand holi days.jpg" class="d-block w-100 h-100" alt="...">
+                  <div class="carousel-caption">
+                    <a href="https://grandholidaysbd.com/" class="btn btn-success rounded-pill py-3 px-5">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselTourism" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselTourism" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-end" data-aos="zoom-in">
+          <div class="col-md-5 text-md-start text-center">
+            <span class="topTitle">LATEST BLOG NEWS</span>
+            <h3 class="mainTitle mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+          </div>
+          <div class="col-md-5 text-md-end text-center">
+            <a href="" class="btn btn-outline-success rounded-pill px-3">
+              VIEW ALL
+              <i class="fa-regular fa-circle-play ms-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+        <div class="col-12">
+        <div class="slider-three">
+
+          <div class="col-md-4 mb-md-0 mb-3" data-aos="zoom-in">
+            <div class="blogBox">
+              <div class="blogBoxImage" style="background-image: url('./assets/img/hotels/Suite\ Single\ 1.webp');"></div>
+              <div class="blogBoxDetail p-4 text-md-start text-center">
+                <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2024</p>
+                <h4 class="py-2">Lorem ipsum dolor, sit amet consectetur adipisicing.</h4>
+                <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-3" data-aos="zoom-in">
+            <div class="blogBox">
+              <div class="blogBoxImage" style="background-image: url('./assets/img/hotels/Suite\ Twin\ 4.webp');"></div>
+              <div class="blogBoxDetail p-4 text-md-start text-center">
+                <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2024</p>
+                <h4 class="py-2">Lorem ipsum dolor, sit amet consectetur adipisicing.</h4>
+                <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-3" data-aos="zoom-in">
+            <div class="blogBox">
+              <div class="blogBoxImage" style="background-image: url('./assets/img/hotels/Deluxe\ Family.webp');"></div>
+              <div class="blogBoxDetail p-4 text-md-start text-center">
+                <p class="fs-12 my-0">By Harold Kozey | Agust 22, 2024</p>
+                <h4 class="py-2">Lorem ipsum dolor, sit amet consectetur adipisicing.</h4>
+                <a href="" class="btn btn-outline-secondary rounded-pill px-3">READ MORE</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-md-5">
+            <form action="" class="contactBox px-4 py-5" data-aos="zoom-in">
+              <div class="row justify-content-center pt-5">
+                <div class="col-md-12">
+                  <span class="topTitle">APPOINMENT NOW</span>
+                  <h3 class="mainTitle mt-2">Contact Us</h3>
+                </div>
+              </div>
+              <div class="row mt-3 justify-content-center pb-5">
+
+                <div class="col-md-6 mb-3">
+                  <input type="text" name="name" id="name" placeholder="Your Name" class="form-control rounded-pill px-4" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="text" name="mobile" id="mobile" placeholder="Your Phone" class="form-control rounded-pill px-4" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" name="email" id="email" placeholder="Your Email" class="form-control rounded-pill px-4" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control rounded-pill px-4" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <textarea name="message" id="message" rows="3" cols="33" class="form-control rounded px-4" placeholder="Enter your message"></textarea>
+                </div>
+                <div class="col-md-11 mt-3">
+                  <div class="row">
+                    <button class="btn btn-success rounded-pill py-2">BOOK NOW</button>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="col-md-7 mt-md-0 mt-4" data-aos="slide-up">
+            <h3>Our Home Away Fom Home Where <br>Comfort Meets</h3>
+            <!-- <div class="contactImage my-4" style="background-image: url('./assets/img/contact.jpg');"></div> -->
+            <div>
+              <iframe class="py-3" width="100%" height="250" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.496869882947!2d89.5510777!3d22.821099699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff918e9c716897%3A0x706b6e76a7793626!2sCity%20Inn%20Limited!5e0!3m2!1sen!2sbd!4v1747806520906!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!-- <div class="row align-items-center justify-content-around">
+              <div class="col-2">
+                <a href="https://maps.app.goo.gl/FGGQLt5HKBBH6cZV8" target="_blank">
+                  <i class="bi bi-geo-alt-fill fs-4 text-success bg-light px-3 p-2 rounded-circle"></i>
+                </a>
+              </div>
+              <div class="col-8">
+                <p class="my-0">Need help?</p>
+                <h4>+880 1711 298 501</h4>
+              </div>
+            </div> -->
+            <div class="row justify-content-center mt-2">
+              <div class="col-md-11">
+                <h5>Need help?</h5> 
+                <a href="tel:+8801711298501" class="fs-4 text-dark">
+                  <i class="bi bi-telephone-fill pe-3"></i>
+                  +880 1711 298 501
+                </a> <br> <br>
+                <a href="mailto:cityinnltd@gmail.com" class="fs-4 text-dark">
+                  <i class="bi bi-envelope-fill pe-3"></i>
+                  cityinnltd@gmail.com
+                </a> <br> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="" class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pb-md-0 pb-5 bg-body-tertiary">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-3">
+            <a class="" href="#">
+              <img src="./assets/img/logo2.png" class="img-fluid" alt="logo">
+            </a>
+          </div>
+          <div class="col-md-2 mt-md-0 mt-4">
+            <p class="footer-heading">Quick Link</p> 
+            <p class="footer-p"><a href="#" class="footer-link">Accommodation</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Restaurant</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Event's</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Tourism</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">Gallery</a></p>
+            <p class="footer-p"><a href="#" class="footer-link">About</a></p>
+          </div>
+          <div class="col-md-3 mt-md-0 mt-4">
+            <p class="footer-heading">Pages</p> 
+            <p class="footer-p">Book Your Hotel Now</p>
+            <p class="footer-p">View Jobs On Resort TNC</p>
+            <p class="footer-p">View Our Facilites</p>
+            <p class="footer-p">Our Customer Review</p>
+            <p class="footer-p">Meet The Owners</p>
+          </div>
+          <div class="col-md-4 mt-md-0 mt-4">
+            <p class="footer-heading">Recent News</p> 
+            <p class="footer-p">Discover And Book A Wide Range Of Hotels</p>
+            <p class="footer-p">Late Check-Out Option</p>
+            <p class="footer-p">In-Room Dining Local Tour Experience</p>
+            <p class="footer-p">Late Check-Out Option Welcome Packge</p>
+            <p class="footer-p">Kid-Friendly Amenities Wellness Retreat</p>
+          </div>
+        </div>
+      </div>
+      <hr class="my-0 py-0">
+      <div class="container ">
+        <div class="row py-2 align-items-center text-secondary">
+          <div class="col-md-6 text-md-start text-center">© City Inn LTD 2024 | all rigths reserved.</div>
+          <div class="col-md-6 text-md-end text-center">
+            <a href="./tearms.html" class="">Terms & Condition</a>
+            <a href="./policy.html" class="ms-3">Privecy & Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" id="scrollToTop"><i class="fa-solid fa-circle-chevron-up" data-aos="fade"></i></a>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- slik slider js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js" integrity="sha512-BzvgYEoHXuphX+g7B/laemJGYFdrq4fTKEo+B3PurSxstMZtwu28FHkPKXu6dSBCzbUWqz/rMv755nUwhjQypw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({offset: 200,duration: 500,});</script>
+
+    <!-- custom js -->
+    <script src="./assets/js/main.js"></script>
+
+    <!-- date picker js -->
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+    </script>
+
+  </body>
+</html>
