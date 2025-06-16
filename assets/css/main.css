@@ -20,6 +20,8 @@
   text-transform: uppercase;
   color: var(--navbar-color);
   cursor: pointer;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
 }
 .nav-link:focus, .nav-link:hover {
   color: green;
