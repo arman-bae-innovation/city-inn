@@ -118,7 +118,7 @@ a{
   bottom: 1.25rem;
   left: 15%;
   padding-top: 1.25rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   color: #fff;
   text-align: center;
 }
@@ -135,7 +135,7 @@ a{
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #00000050;
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
@@ -555,4 +555,13 @@ footer{
 }
 .bg-green{
   background-color: green;
+}
+.terms-list-div{}
+.terms-list-div ol{}
+.terms-list-div ol li{
+  padding: 10px 0px;
+  font-size: 20px;
+}
+.nearby-card img{
+  height: 200px;
 }
