@@ -565,3 +565,13 @@ footer{
 .nearby-card img{
   height: 200px;
 }
+.time-zone-show{
+  font-size: 12px; 
+  position: fixed; 
+  left: 10px; 
+  bottom: 10px; 
+  z-index: 999; 
+  color: #fff; 
+  text-align: center;
+}
+
