@@ -291,7 +291,8 @@ footer{
   padding: 3px 15px;
   border-radius: 30px;
   text-wrap: nowrap;
-  font-size: 12px;
+  font-size: 18px;
+  margin-right: 5px;
 }
 .tooltip-inner {
   background-color: #fff !important;
