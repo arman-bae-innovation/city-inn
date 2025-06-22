@@ -117,13 +117,13 @@ a{
   right: 15%;
   bottom: 1.25rem;
   left: 15%;
-  padding-top: 1.25rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
   color: #fff;
   text-align: center;
 }
 .carousel-indicators {
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
