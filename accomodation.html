@@ -112,14 +112,13 @@
                   <div class="card-body">
                     <h4 class="card-title fw-bold">Deluxe</h4>
                     <p class="mt-3 mb-1">Main amenities</p>
-                    <div class="room-facilities-icon mb-3 gap-4 d-flex">
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
                       <i class="bi bi-wifi" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
                       <i class="bi bi-cup-hot" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
                       <i class="bi bi-plugin" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
                       <i class="bi bi-display" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
                       <i class="bi bi-window-sidebar" data-bs-toggle="tooltip" title="Work desk"></i>
                       <i class="bi bi-key" data-bs-toggle="tooltip" title="In-room safe"></i>
-                      <!-- <i class="bi bi-basket" data-bs-toggle="tooltip" title="Recycle bin"></i> -->
                     </div>
                     <div class="py-1 d-flex justify-content-between">
                       <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
@@ -128,6 +127,17 @@
                     <div class="collapse" id="collapseDeluxe">
                       <div class="card card-body">
                         
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house-fill" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people-fill" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-end">
+                            <i class="bi bi-cash-coin" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
                         <div class="row" style="border-bottom: 1px solid #00000030;">
                           <div class="col-6">Deluxe Single</div>
                           <div class="col-2 text-center">1</div>
@@ -209,6 +219,7 @@
               </div> -->
 
             </div>
+
           </div>
         </div>
       </div>
@@ -221,13 +232,14 @@
               <h1 class="modal-title fs-5" id="exampleModalLabel">Deluxe</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pt-2">
 
               <div class="row justify-content-around">
 
-                <div class="col-md-6"></div>
-                <div class="col-md-5">
-                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <!-- <div class="col-md-6"></div> -->
+
+                <div class="col-md-12">
+                  <ul class="nav nav-pills mb-2 justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                       <button class="nav-link read-more-link rounded-pill px-2 py-0 active" id="pills-Deluxe-Single-tab" data-bs-toggle="pill" data-bs-target="#pills-Deluxe-Single" type="button" role="tab" aria-controls="pills-Deluxe-Single" aria-selected="true">Single</button>
                     </li>
@@ -249,38 +261,41 @@
                       <div class="row justify-content-around">
                         <div class="col-md-6 mb-4">
                           <img class="img-fluid rounded" src="./assets/img/rooms/Deluxe Single 1.webp" alt="image">
+  
+                          <h5 class="mt-4 mb-3">Main amenities</h5>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/air-conditioner.png" data-bs-toggle="tooltip" title="Rooms are air-conditioned" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/breakfast.png" data-bs-toggle="tooltip" title="Complementary Buffet Breakfast" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/mineral-water.png" data-bs-toggle="tooltip" title="Mineral Water (1L) daily" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/locker.png" data-bs-toggle="tooltip" title="Digital Locker" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/dumbbell.png" data-bs-toggle="tooltip" title="Fitness Center" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/wifi.png" data-bs-toggle="tooltip" title="Wi-Fi Facilities" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/tea-cup.png" data-bs-toggle="tooltip" title="Tea / Coffee Setup" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/fridge.png" data-bs-toggle="tooltip" title="Refrigerator" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/television.png" data-bs-toggle="tooltip" title="TV with Cable Program" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/intercom.png" data-bs-toggle="tooltip" title="Intercom" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/bathtub.png" data-bs-toggle="tooltip" title="Bath Tub" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/hot-water.png" data-bs-toggle="tooltip" title="Hot water Supply" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/bathroom.png" data-bs-toggle="tooltip" title="Bathroom Amenities" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/sofa.png" data-bs-toggle="tooltip" title="Elegant Furniture" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/digital-door.png" data-bs-toggle="tooltip" title="Digital Room Lock System" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/fire-extinguisher.png" data-bs-toggle="tooltip" title="Digital Fire Management" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/no-animals.png" data-bs-toggle="tooltip" title="Pet Is Not Allowed" alt="logo">
+                                <img class="me-4 mb-4" style="height: 30px; width: auto;" src="./assets/img/amenities/parking.png" data-bs-toggle="tooltip" title="Parking" alt="logo">
+                            </div>
+                          </div>
+
                         </div>
-                        <div class="col-md-5 read-more-right">
+                        <div class="col-md-6 read-more-right123">
                           <div class="mb-3">
                             <span class="room-badge">200 SFT</span>
                             <span class="room-badge">1 Adult</span>
                             <span class="room-badge">1 Single Bed</span>
                             <span class="room-badge bg-dark text-white">2800 tk</span>
                           </div>
-                          <p>1 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
-                          
-                          <h5 class="mt-4 mb-3">Main amenities</h5>
-                          <div class="row">
-                            <div class="col-md-12">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/air-conditioner.png" data-bs-toggle="tooltip" title="Rooms are air-conditioned" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/breakfast.png" data-bs-toggle="tooltip" title="Complementary Buffet Breakfast" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/mineral-water.png" data-bs-toggle="tooltip" title="Mineral Water (1L) daily" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/locker.png" data-bs-toggle="tooltip" title="Digital Locker" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/dumbbell.png" data-bs-toggle="tooltip" title="Fitness Center" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/wifi.png" data-bs-toggle="tooltip" title="Wi-Fi Facilities" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/tea-cup.png" data-bs-toggle="tooltip" title="Tea / Coffee Setup" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/fridge.png" data-bs-toggle="tooltip" title="Refrigerator" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/television.png" data-bs-toggle="tooltip" title="TV with Cable Program" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/intercom.png" data-bs-toggle="tooltip" title="Intercom" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/bathtub.png" data-bs-toggle="tooltip" title="Bath Tub" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/hot-water.png" data-bs-toggle="tooltip" title="Hot water Supply" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/bathroom.png" data-bs-toggle="tooltip" title="Bathroom Amenities" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/sofa.png" data-bs-toggle="tooltip" title="Elegant Furniture" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/digital-door.png" data-bs-toggle="tooltip" title="Digital Room Lock System" alt="logo">
-                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/fire-extinguisher.png" data-bs-toggle="tooltip" title="Digital Fire Management" alt="logo">
-                            </div>
-                          </div>
-
+                          <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                        
                           <h5 class="mt-4 mb-3">Facilities & Services</h5>
                           <div class="row">
                             <div class="col-12">
@@ -291,7 +306,6 @@
                                 <li>Business Centre with secretarial service,</li>
                                 <li>Same day laundry service.</li>
                                 <li>Lift and Stand-by Generator.</li>
-                                <li>Car parking.</li>
                                 <li>24- hour security service & CCTV.</li>
                                 <li>Doctors on Call.</li>
                                 <li>Tour Desk for Sightseeing.</li>
@@ -322,7 +336,7 @@
                             <span class="room-badge bg-dark text-white">3500 tk</span>
                           </div>
                           
-                          <p>2 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                           
                           <h5 class="mt-4 mb-3">Main amenities</h5>
                           <div class="row">
@@ -343,6 +357,7 @@
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/sofa.png" data-bs-toggle="tooltip" title="Elegant Furniture" alt="logo">
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/digital-door.png" data-bs-toggle="tooltip" title="Digital Room Lock System" alt="logo">
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/fire-extinguisher.png" data-bs-toggle="tooltip" title="Digital Fire Management" alt="logo">
+                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/no-animals.png" data-bs-toggle="tooltip" title="Pet Is Not Allowed" alt="logo">
                             </div>
                           </div>
 
@@ -387,7 +402,7 @@
                             <span class="room-badge bg-dark text-white">3800 tk</span>
                           </div>
                           
-                          <p>3 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                           
                           <h5 class="mt-4 mb-3">Main amenities</h5>
                           <div class="row">
@@ -408,6 +423,7 @@
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/sofa.png" data-bs-toggle="tooltip" title="Elegant Furniture" alt="logo">
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/digital-door.png" data-bs-toggle="tooltip" title="Digital Room Lock System" alt="logo">
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/fire-extinguisher.png" data-bs-toggle="tooltip" title="Digital Fire Management" alt="logo">
+                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/no-animals.png" data-bs-toggle="tooltip" title="Pet Is Not Allowed" alt="logo">
                             </div>
                           </div>
 
@@ -452,7 +468,7 @@
                             <span class="room-badge bg-dark text-white">5800 tk</span>
                           </div>
                           
-                          <p>4 Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
+                          <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                           
                           <h5 class="mt-4 mb-3">Main amenities</h5>
                           <div class="row">
@@ -473,6 +489,7 @@
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/sofa.png" data-bs-toggle="tooltip" title="Elegant Furniture" alt="logo">
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/digital-door.png" data-bs-toggle="tooltip" title="Digital Room Lock System" alt="logo">
                                 <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/fire-extinguisher.png" data-bs-toggle="tooltip" title="Digital Fire Management" alt="logo">
+                                <img class="me-4 mb-4" style="height: 40px; width: auto;" src="./assets/img/amenities/no-animals.png" data-bs-toggle="tooltip" title="Pet Is Not Allowed" alt="logo">
                             </div>
                           </div>
 
