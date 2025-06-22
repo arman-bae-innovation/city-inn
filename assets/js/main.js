@@ -19,6 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // SLICK SLIDER START --------
 
+// slider-one
+$(document).ready(function(){
+  $('.slider-one').slick({
+
+    dots: true,
+    arrows: true,
+
+    infinite: false,
+    speed: 300,
+
+    slidesToShow: 1,
+    slidesToScroll: 1,
+
+    autoplay: false,
+    autoplaySpeed: 2000,
+
+  });
+});
 // slider-two
 $(document).ready(function(){
   $('.slider-two').slick({
