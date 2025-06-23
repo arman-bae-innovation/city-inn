@@ -655,3 +655,46 @@ footer{
     outline: none;
     box-shadow: none;
 }
+
+
+
+
+  #child1age::-webkit-slider-thumb, #child2age::-webkit-slider-thumb {
+    background-color: #38A352; /* Thumb color */
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -8px; /* Align with track */
+  }
+
+  #child1age::-webkit-slider-runnable-track, #child2age::-webkit-slider-runnable-track {
+    background-color: #38A35240; /* Track color */
+    height: 6px;
+    border-radius: 5px;
+  }
+
+  #child1age::-moz-range-thumb, #child2age::-moz-range-thumb {
+    background-color: #38A352;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #child1age::-moz-range-track, #child2age::-moz-range-track {
+    background-color: #38A35240;
+    height: 6px;
+    border-radius: 5px;
+  }
+
+  /* Optional: for IE */
+  #child1age::-ms-thumb, #child2age::-ms-thumb {
+    background-color: #38A352;
+  }
+
+  #child1age::-ms-track, #child2age::-ms-track {
+    background-color: #38A35240;
+  }
