@@ -262,3 +262,86 @@ document.addEventListener("visibilitychange", function () {
 });
 
 // AUTO TITLE CHANGE GO ANOTHER TAB END 
+
+
+
+
+// ROOM GUSET INCREASE AND DECREASE START
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const adultDecreaseBtn = document.getElementById('adultDecrease');
+    const adultIncreaseBtn = document.getElementById('adultIncrease');
+    const countDisplay1 = document.querySelector('.adultPersonShow1');
+    const countDisplay2 = document.querySelector('.adultPersonShow2');
+    let countAdult = 1;
+    adultIncreaseBtn.addEventListener('click', function () {
+      if (countAdult < 4) {
+        countAdult++;
+        countDisplay1.textContent = countAdult;
+        countDisplay2.textContent = countAdult;
+      }
+    });
+    adultDecreaseBtn.addEventListener('click', function () {
+      if (countAdult > 1) {
+        countAdult--;
+        countDisplay1.textContent = countAdult;
+        countDisplay2.textContent = countAdult;
+      }
+    });
+
+    const childDecreaseBtn = document.getElementById('childDecrease');
+    const childIncreaseBtn = document.getElementById('childIncrease');
+    const countChildDisplay1 = document.querySelector('.childPersonShow1');
+    const countChildDisplay2 = document.querySelector('.childPersonShow2');
+    let countChild = 0;
+    childIncreaseBtn.addEventListener('click', function () {
+      if (countChild < 2) {
+        countChild++;
+        countChildDisplay1.textContent = countChild;
+        countChildDisplay2.textContent = countChild;
+
+      }
+      if (countChild == 1) {
+        document.getElementById('child1div').classList.remove('d-none');
+      }
+      if (countChild == 2) {
+        document.getElementById('child1div').classList.remove('d-none');
+        document.getElementById('child2div').classList.remove('d-none');
+      }
+    });
+    childDecreaseBtn.addEventListener('click', function () {
+      if (countChild > 0) {
+        countChild--;
+        countChildDisplay1.textContent = countChild;
+        countChildDisplay2.textContent = countChild;
+      }
+      if (countChild == 0) {
+        document.getElementById('child1div').classList.add('d-none');
+      }
+      if (countChild == 1) {
+        document.getElementById('child2div').classList.add('d-none');
+      }
+    });
+
+  });
+
+
+  // first
+  const child1age = document.getElementById('child1age');
+  const value1age = document.getElementById('value1age');
+  value1age.textContent = child1age.value;
+  child1age.addEventListener('input', function() {
+    value1age.textContent = this.value;
+  });
+
+  // second 
+  const child2age = document.getElementById('child2age');
+  const value2age = document.getElementById('value2age');
+  value2age.textContent = child2age.value;
+  child2age.addEventListener('input', function() {
+    value2age.textContent = this.value;
+  });
+
+// ROOM GUSET INCREASE AND DECREASE END 
+ 

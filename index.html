@@ -25,6 +25,18 @@
     <!-- slik slider css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+      .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+          background: #38A352;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          color: #fff;
+          border-color: #38A352;
+      }
+    </style>
 
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -491,28 +503,99 @@
 
     </div>
 
-    <section id="" class="room-search-section">
+    <section style="position: sticky; top: 70px; z-index: 999;" class="bg-white d-md-block d-none shadow-sm">
+      <div class="container py-2">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <div class="">
+              <i class="bi bi-calendar2 me-2" style="color: #707070;"></i>
+              <span style="color: #707070;font-weight: 500;">DATES ( <span id="showPerNight">0</span> NIGHTS )</span>
+            </div>
+            <div class="">
+              <input id="dateRange" type="text" class="form-control mt-2" placeholder="Choose Your Suitable Date">
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3" style="border-left: 1.5px dotted gray; border-right: 1.5px dotted gray;">
+            <div class="">
+              <i class="bi bi-house me-2" style="color: #707070;"></i>
+              <span style="color: #707070;font-weight: 500;">ROOMS & GUESTS</span>
+            </div>
+            <div class="">
+              <!-- <select name="" id="" class="form-select mt-2">Guest</select> -->
+              <div class="dropdown mt-2">
+                <a class="btn text-dark dropdown-toggle d-flex align-items-center justify-content-between" style="border: 1px solid #00000020;" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+                  <div> <span class="adultPersonShow1">1</span> Adults, <span class="childPersonShow1">0</span> Child </div>
+                </a>
+
+                <div class="dropdown-menu w-100 p-4">
+
+                  <div class="fs-14 text-secondary">
+                    MAXIMUM 8 GUESTS PER ROOM
+                  </div>
+
+                  <div class="row fs-5 text-dark pt-4 mb-3">
+                    <div class="col-6">
+                      Adults
+                    </div>
+                    <div class="col-6 text-end">
+                      <span id="adultDecrease" class="text-dark" style="cursor: pointer;"><i class="bi bi-dash-circle"></i></span>
+                      <span class="px-3 adultPersonShow2">1</span>
+                      <span id="adultIncrease" class="text-dark" style="cursor: pointer;"><i class="bi bi-plus-circle"></i></span>
+                    </div>
+                  </div>
+                  <div class="row fs-5 text-dark pt-3" style="border-top: 1px solid #00000020;">
+                    <div class="col-6">
+                      Children
+                    </div>
+                    <div class="col-6 text-end">
+                      <span id="childDecrease" class="text-dark" style="cursor: pointer;"><i class="bi bi-dash-circle"></i></span>
+                      <span class="px-3 childPersonShow2">0</span>
+                      <span id="childIncrease" class="text-dark" style="cursor: pointer;"><i class="bi bi-plus-circle"></i></span>
+                    </div>
+                  </div>
+
+                  <div id="child1div" class="mt-4 d-none">
+                    First Child : <output for="child1age" id="value1age" aria-hidden="true"></output>
+                    <input type="range" class="form-range" min="0" max="12" value="0" id="child1age">
+
+                  </div>
+                  <div id="child2div" class="mt-2 d-none">
+                    Second Child : <output for="child2age" id="value2age" aria-hidden="true"></output>
+                    <input type="range" class="form-range" min="0" max="12" value="0" id="child2age">
+                  </div>
+
+                  
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <a  class="btn btn-outline-success py-2 px-4 rounded d-inline">ROOM SEARCH</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="" class="room-search-section">
       <div class="container py-5">
         <div class="row">
           <div class="col-md-12">
-            <!-- <div class="card p-2 p-md-5 search-card"> -->
             <div class="search-card" style="background-color: #222222;">
               <div class="row text-center align-items-center justify-content-center">
                 <div class="col-md-4 mb-md-0 mb-3">
-                  <!-- <input placeholder="Check-in" class="d-md-none d-block rounded-pill py-2 fs-4 text-center" id="startDate" /> -->
                   <div class="form-floating">
                     <input id="startDate" class="rounded-pill py-2 fs-4 text-end" placeholder="">
                     <label for="startDate" class="py-2 fs-4 text-start">Check-in : </label>
                   </div>
                 </div>
                 <div class="col-md-4 mb-md-0 mb-3">
-                  <!-- <input placeholder="Check-out" class="d-md-none d-block rounded-pill py-2 fs-4 text-center" id="endDate" /> -->
                   <div class="form-floating">
                     <input id="endDate" class="rounded-pill py-2 fs-4 text-end" placeholder="">
                     <label for="endDate" class="py-2 fs-4 text-start">Check-out : </label>
                   </div>
                 </div>
-                <!-- <div class="col-md-3 mb-md-0 mb-3"><input placeholder="Person" class="rounded-pill py-2 fs-4 text-center" /></div> -->
                 <div class="col-md-3">
                   <a href="" class="btn btn-success rounded-pill fs-3 d-block">Search</a>
                 </div>
@@ -521,7 +604,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="about" class="about pb-5" style="background-image: url('./assets/img/aboutBG.png');">
       <div class="container pt-5">
@@ -619,6 +702,37 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init({offset: 200,duration: 500,});</script>
+       
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#dateRange", {
+        mode: "range",
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates, dateStr, instance) {
+          if (selectedDates.length === 2) {
+            const options = { day: '2-digit', month: 'long', year: 'numeric' };
+            const start = selectedDates[0];
+            const end = selectedDates[1];
+
+            // Format display in the input
+            const formattedStart = start.toLocaleDateString('en-GB', options);
+            const formattedEnd = end.toLocaleDateString('en-GB', options);
+            instance.input.value = `${formattedStart} to ${formattedEnd}`;
+
+            // Calculate number of nights
+            const oneDay = 24 * 60 * 60 * 1000;
+            const nights = Math.round((end - start) / oneDay);
+
+            // Update the DOM
+            document.getElementById('showPerNight').innerText = nights;
+          } else {
+            document.getElementById('showPerNight').innerText = '0';
+          }
+        }
+      });
+    </script>
 
     <!-- custom js -->
     <script src="./assets/js/main.js"></script>
