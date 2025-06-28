@@ -96,7 +96,7 @@
     };
 
     const fallbackRates = {
-      BDT: 121.00 // 1 USD = 108 BDT (example rate, update as needed)
+      BDT: 121.00 // Example fallback rate for BDT
     };
 
     function populateCurrencyOptions() {
@@ -104,7 +104,6 @@
         const option = document.createElement("option");
         option.value = code;
         option.textContent = `${code} (${currencyNames[code] || "Unknown"})`;
-        if (code === baseCurrency) option.selected = true;
         currencySelector.appendChild(option);
       });
     }
@@ -116,9 +115,8 @@
         const data = await res.json();
 
         exchangeRates = data.rates;
-        exchangeRates["USD"] = 1; // Add base currency manually
+        exchangeRates["USD"] = 1;
 
-        // Add fallback rates for unsupported currencies
         for (const [code, rate] of Object.entries(fallbackRates)) {
           if (!(code in exchangeRates)) {
             exchangeRates[code] = rate;
@@ -163,12 +161,24 @@
       }, 5000);
     }
 
+    // Save selected currency to localStorage
     currencySelector.addEventListener("change", () => {
-      updatePrices(currencySelector.value);
+      const selectedCurrency = currencySelector.value;
+      localStorage.setItem("preferredCurrency", selectedCurrency);
+      updatePrices(selectedCurrency);
     });
 
+    // Init on page load
     (async function init() {
       populateCurrencyOptions();
+
+      const savedCurrency = localStorage.getItem("preferredCurrency");
+      if (savedCurrency && currencyList.includes(savedCurrency)) {
+        currencySelector.value = savedCurrency;
+      } else {
+        currencySelector.value = baseCurrency;
+      }
+
       await fetchExchangeRates();
     })();
   </script>

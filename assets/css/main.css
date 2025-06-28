@@ -41,6 +41,11 @@
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
   color: #38A352;
 }
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: transparent;
+    color: #38A352;
+    transform: scale(1.1);
+}
 a{
   text-decoration: none;
   color: #38A352;

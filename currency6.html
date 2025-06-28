@@ -62,16 +62,13 @@
       <p class="price" data-usd="1">Price: $1</p>
     </div>
 
+    @foreach($services as $srvice)
     <div class="service">
-      <h2>SEO Optimization</h2>
-      <p class="price" data-usd="150">Price: $150</p>
+      <h2>{{$srvice->title}}</h2>
+      <p class="price" data-usd="{{$srvice->price}}">Price: {{$srvice->price}}</p>
     </div>
+    @endforeach
 
-    <div class="service">
-      <h2>Monthly Maintenance</h2>
-      <p class="price" data-usd="100">Price: $100</p>
-    </div>
-    
   </div>
 
   <script>
