@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>City inn Ltd</title>
+    <link rel="shortcut icon" href="./assets/img/fav2.png" type="image/x-icon">
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.min.css" integrity="sha512-8hM9a+2hrLBhOuB3uiy+QIXBsu6Qk+snsP1CboFQW6pdt/yYz0IcDp/+CGv5m39r9doGUc/zw6aBpyLF6XFgzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" integrity="sha512-DzC7h7+bDlpXPDQsX/0fShhf1dLxXlHuhPBkBo/5wJWRoTU6YL7moeiNoej6q3wh5ti78C57Tu1JwTNlcgHSjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- slik slider css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+      .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+          background: #38A352;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          color: #fff;
+          border-color: #38A352;
+      }
+    </style>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/main.css?v=1.0.3">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=1.0.3">
+
+  </head>
+  <body>
+
+    <div class="time-zone-show">
+      <div class="mb-1 bg-green p-1 rounded"><span id="liveTime">--:--</span> <br> Live Time</div>
+      <div class="bg-green p-1 rounded"><span id="khulnaTime">--:--</span> <br> Khulna, BD Time</div>
+    </div>
+    <script>
+      function updateTimes() {
+        const userDate = new Date();
+        const khulnaDate = new Date(
+          userDate.toLocaleString("en-US", { timeZone: "Asia/Dhaka" })
+        );
+        const formatTime = (date) =>
+          date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById("liveTime").textContent = formatTime(userDate);
+        document.getElementById("khulnaTime").textContent = formatTime(khulnaDate);
+      }
+      updateTimes();
+      setInterval(updateTimes, 1000);
+    </script>
+
+    <nav class="navbar navbar-expand-lg sticky-top py-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/img/logo2.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i id="navbar-icon" class="bi bi-list fs-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./accomodation.html">Accommodation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dining.html">Dining</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./event.html">Event's</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tourism.html">Tourism</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./gallery.html">GALLERY</a></li>
+                <li><a class="dropdown-item" href="#">REVIEWS</a></li>
+                <li><a class="dropdown-item" href="./tearms.html">TERMS & CONDITION</a></li>
+                <li><a class="dropdown-item" href="./policy.html">PARIVACY POLICY</a></li>
+                <li><a class="dropdown-item" href="./tourism.html#surrounding">NEARBY SIGHTS</a></li>
+                <li><a class="dropdown-item" href="./tourism.html#emergency_contact">EMERGENCY CONTACT</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="./contact.html" class="btn btn-success rounded-pill px-3">
+            Contact
+            <i class="bi bi-arrow-right-short"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="card p-5 shadow">
+              <div class="row">
+
+                <div class="col-md-6 mb-3">
+                  <label for="">Dates ( <span id="showPerNight">0</span> NIGHTS )</label>
+                  <input id="dateRange" type="text" class="form-control mt-2">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="">Are your dates flexible ?</label>
+                  <select name="" id="" class="form-select my-2">
+                    <option value="" hidden>Choose</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="mb-2">Service you want to book</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="Accomodation">
+                    <label class="form-check-label" for="Accomodation">
+                      Accomodation
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="Event">
+                    <label class="form-check-label" for="Event">
+                      Event
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row mt-3 d-none" id="accomodationDiv">
+                  <h4>Accomodation</h4>
+                  <hr>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="">Guest rooms: How many are needed ?</label>
+                    <input type="text" name="" id="" class="form-control my-2" >
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="">ATTENDEES</label>
+                    <input type="text" name="" id="" class="form-control my-2" >
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="">Single Bed</label>
+                    <input type="number" class="form-control my-2">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Couple Bed</label>
+                    <input type="number" class="form-control my-2">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Two Bed</label>
+                    <input type="number" class="form-control my-2">
+                  </div>
+
+                </div>
+
+                <div class="row mt-3 d-none align-items-center" id="eventDiv">
+                  <h4>Event</h4>
+                  <hr>
+                  <div class="col-md-6 mb-3">
+                    <label for="eventType">Select An Event Type</label>
+                    <select name="" id="eventType" class="form-select my-2">
+                      <option value="" hidden>Choose</option>
+                      <option value="Business">Business</option>
+                      <option value="Social">Social</option>
+                      <option value="Wedding">Wedding</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="otherEvent">If Other, Please Specify</label>
+                    <input type="text" name="" id="otherEvent" class="form-control my-2" disabled>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="">ATTENDEES</label>
+                    <input type="text" name="" id="" class="form-control my-2" >
+                  </div>
+                  <div class="col-md-6 mb-3 d-flex gap-5 fs-5">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="Food">
+                      <label class="form-check-label" for="Food">
+                        Food & Beverage
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="Audio">
+                      <label class="form-check-label" for="Audio">
+                        Audio & Visual
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3 d-flex gap-5">
+                    <div class="form-check">
+                      <img style="height:50px; width:auto;" src="./assets/img/icons/banquet.svg" alt="image"><br>
+                      <input class="form-check-input" type="radio" name="radioDefault" id="banquet">
+                      <label class="form-check-label" for="banquet">
+                        banquet
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <img style="height:50px; width:auto;" src="./assets/img/icons/cabaret.svg" alt="image"><br>
+                      <input class="form-check-input" type="radio" name="radioDefault" id="cabaret" checked>
+                      <label class="form-check-label" for="cabaret">
+                        cabaret
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <img style="height:50px; width:auto;" src="./assets/img/icons/class-room.svg" alt="image"><br>
+                      <input class="form-check-input" type="radio" name="radioDefault" id="class" checked>
+                      <label class="form-check-label" for="class">
+                        class-room
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <img style="height:50px; width:auto;" src="./assets/img/icons/meeting-room.svg" alt="image"><br>
+                      <input class="form-check-input" type="radio" name="radioDefault" id="meeting" checked>
+                      <label class="form-check-label" for="meeting">
+                        meeting-room
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <img style="height:50px; width:auto;" src="./assets/img/icons/u-room.svg" alt="image"><br>
+                      <input class="form-check-input" type="radio" name="radioDefault" id="meeting" checked>
+                      <label class="form-check-label" for="meeting">
+                        I Dont know Yet
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+
+<script>
+  // Elements
+  const accomodationCheckbox = document.getElementById('Accomodation');
+  const eventCheckbox = document.getElementById('Event');
+  const accomodationDiv = document.getElementById('accomodationDiv');
+  const eventDiv = document.getElementById('eventDiv');
+
+  // Load previous state from localStorage
+  window.onload = function () {
+    const accState = localStorage.getItem('checkbox_accomodation') === 'true';
+    const eventState = localStorage.getItem('checkbox_event') === 'true';
+
+    accomodationCheckbox.checked = accState;
+    eventCheckbox.checked = eventState;
+
+    accomodationDiv.classList.toggle('d-none', !accState);
+    eventDiv.classList.toggle('d-none', !eventState);
+  };
+
+  // Save to localStorage on change
+  accomodationCheckbox.addEventListener('change', function () {
+    accomodationDiv.classList.toggle('d-none', !this.checked);
+    localStorage.setItem('checkbox_accomodation', this.checked);
+  });
+
+  eventCheckbox.addEventListener('change', function () {
+    eventDiv.classList.toggle('d-none', !this.checked);
+    localStorage.setItem('checkbox_event', this.checked);
+  });
+</script>
+
+<script>
+// EVENT TYPE CHANGE START 
+const eventTypeSelect = document.getElementById('eventType');
+const otherEventInput = document.getElementById('otherEvent');
+
+eventTypeSelect.addEventListener('change', function () {
+  if (eventTypeSelect.value === 'Other') {
+    otherEventInput.disabled = false;
+  } else {
+    otherEventInput.disabled = true;
+    otherEventInput.value = '';
+  }
+});
+// EVENT TYPE CHANGE END 
+</script>
+                <!-- <div class="col-md-12 mb-3">
+                  <label for="">Name your event</label>
+                  <input type="text" name="" id="" class="form-control my-2" >
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label for="">Please attach any other information you'd like us to know about your event</label>
+                  <input type="file" name="" id="" class="form-control my-2" >
+                </div> -->
+
+                <div class="col-md-12 text-center">
+                  <a href="./book_now3.html" class="btn btn-dark rounded-pill">CONTINUE</a>
+                  <!-- <button class="btn btn-dark rounded-pill">CONTINUE</button> -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer class="pb-md-0 pb-5 bg-body-tertiary">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-3 d-flex align-items-end" style="height: 200px; background-image: url(./assets/img/footerLogoBG.png);background-position: center;background-repeat: no-repeat;background-size: cover;">
+            <a class="" href="./index.html">
+              <img src="./assets/img/logo2.png" class="img-fluid" alt="logo">
+            </a>
+          </div>
+          <div class="col-md-2 mt-md-0 mt-4">
+            <p class="footer-heading">Quick Link</p> 
+            <p class="footer-p"><a href="./accomodation.html" class="footer-link">Accommodation</a></p>
+            <p class="footer-p"><a href="./dining.html" class="footer-link">Restaurant</a></p>
+            <p class="footer-p"><a href="./event.html" class="footer-link">Event's</a></p>
+            <p class="footer-p"><a href="./tourism.html" class="footer-link">Tourism</a></p>
+            <p class="footer-p"><a href="./gallery.html" class="footer-link">Gallery</a></p>
+            <p class="footer-p"><a href="./about.html" class="footer-link">About</a></p>
+          </div>
+          <div class="col-md-3 mt-md-0 mt-4">
+            <p class="footer-heading">Surrounding Us</p> 
+            <p class="footer-p"><a href="./tourism.html#surrounding" class="footer-link">New Market</a></p>
+            <p class="footer-p"><a href="./tourism.html#surrounding" class="footer-link">Khulna Rail Station</a></p>
+            <p class="footer-p"><a href="./tourism.html#surrounding" class="footer-link">Rupsha Bridge</a></p>
+            <p class="footer-p"><a href="./tourism.html#surrounding" class="footer-link">Shat Gombuj Moshjid</a></p>
+            <p class="footer-p"><a href="./tourism.html#surrounding" class="footer-link">City Medical Hospital</a></p>
+            <p class="footer-p"><a href="./tourism.html#surrounding" class="footer-link">Khulna Medical College</a></p>
+          </div>
+          <div class="col-md-4 mt-md-0 mt-4">
+            <p class="footer-heading text-center">Official Booking Partners</p> 
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-3 col-4 mb-3">
+                  <img class="img-fluid" src="./assets/img/partners/Bizcon.webp" alt="image">
+                </div>
+                <div class="col-md-3 col-4 mb-3">
+                  <img class="img-fluid" src="./assets/img/partners/Innoglobe.webp" alt="image">
+                </div>
+                <div class="col-md-3 col-4 mb-3">
+                  <img class="img-fluid" src="./assets/img/partners/Sharetrip.webp" alt="image">
+                </div>
+                <div class="col-md-3 col-4 mb-3">
+                  <img class="img-fluid" src="./assets/img/partners/Tour Planners.webp" alt="image">
+                </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <hr class="my-0 py-0">
+      <div class="container ">
+        <div class="row py-2 align-items-center text-secondary">
+          <div class="col-md-6 text-md-start text-center">© City Inn LTD 2024 | all rigths reserved.</div>
+          <div class="col-md-6 text-md-end text-center">
+            <a href="./tearms.html" class="">Terms & Condition</a>
+            <a href="./policy.html" class="ms-3">Privacy & Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" id="scrollToTop"><i class="fa-solid fa-circle-chevron-up" data-aos="fade"></i></a>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- slik slider js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js" integrity="sha512-BzvgYEoHXuphX+g7B/laemJGYFdrq4fTKEo+B3PurSxstMZtwu28FHkPKXu6dSBCzbUWqz/rMv755nUwhjQypw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({offset: 200,duration: 500,});</script>
+       
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#dateRange", {
+        mode: "range",
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates, dateStr, instance) {
+          if (selectedDates.length === 2) {
+            const options = { day: '2-digit', month: 'long', year: 'numeric' };
+            const start = selectedDates[0];
+            const end = selectedDates[1];
+
+            // Format display in the input
+            const formattedStart = start.toLocaleDateString('en-GB', options);
+            const formattedEnd = end.toLocaleDateString('en-GB', options);
+            instance.input.value = `${formattedStart} to ${formattedEnd}`;
+
+            // Calculate number of nights
+            const oneDay = 24 * 60 * 60 * 1000;
+            const nights = Math.round((end - start) / oneDay);
+
+            // Update the DOM
+            document.getElementById('showPerNight').innerText = nights;
+          } else {
+            document.getElementById('showPerNight').innerText = '0';
+          }
+        }
+      });
+    </script>
+
+    <!-- custom js -->
+    <script src="./assets/js/main.js?v=1.0.3"></script>
+
+    <!-- date picker js -->
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            },
+            format: 'dd mmmm yyyy'
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            },
+            format: 'dd mmmm yyyy'
+        });
+    </script>
+
+  </body>
+</html>

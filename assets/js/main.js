@@ -15,7 +15,30 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // NAV MENU TOGGOLER END
 
+
+// BOOK NOW 3 ADDRESS BUSINESS OR PERSONAL START
+  const businessRadio = document.getElementById('Business');
+  const personalRadio = document.getElementById('Personal');
+  const companyNameInput = document.getElementById('companyName');
+
+  function toggleCompanyName() {
+    companyNameInput.disabled = personalRadio.checked;
+  }
+
+  // Run on load
+  toggleCompanyName();
+
+  // Listen for changes
+  businessRadio.addEventListener('change', toggleCompanyName);
+  personalRadio.addEventListener('change', toggleCompanyName);
+// BOOK NOW 3 ADDRESS BUSINESS OR PERSONAL END
+
+
 });
+
+
+
+
 
 // SLICK SLIDER START --------
 

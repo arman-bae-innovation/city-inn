@@ -703,3 +703,18 @@ footer{
   #child1age::-ms-track, #child2age::-ms-track {
     background-color: #38A35240;
   }
+  .form-select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+    box-shadow: none;
+}
+.form-check-input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+    box-shadow: none;
+}
+.form-control, .form-select{
+  border: 1px solid black;
+}
