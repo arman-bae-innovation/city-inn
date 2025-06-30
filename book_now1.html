@@ -199,7 +199,7 @@
                     <label for="">ATTENDEES</label>
                     <input type="text" name="" id="" class="form-control my-2" >
                   </div>
-                  <div class="col-md-6 mb-3 d-flex gap-5 fs-4"> 
+                  <div class="col-md-12 my-4 d-flex gap-5 fs-5"> 
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="Food">
                       <label class="form-check-label" for="Food">
@@ -212,53 +212,184 @@
                         Audio & Visual
                       </label>
                     </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="Logistic">
+                      <label class="form-check-label" for="Logistic">
+                        Logistic
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="Decoration">
+                      <label class="form-check-label" for="Decoration">
+                        Decoration
+                      </label>
+                    </div>
                   </div>
+
+<!-- <div class="col-12">
+<style>
+  .layout-option {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .layout-option:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .layout-option input[type="radio"] {
+    display: block;
+  }
+
+  .layout-option img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .layout-option.active {
+    border: 2px solid black;
+  }
+
+  .layout-option label {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+</style>
+<div class="row d-md-flex d-block g-3">
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Conference" id="conference">
+      <img src="./assets/img/icons/banquet.svg" alt="Conference">
+      <label for="conference">Conference</label>
+    </div>
+  </div>
+
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+  <div class="col text-center">
+    <div class="layout-option" onclick="selectLayout(this)">
+      <input type="radio" name="layout" value="Crescent Rounds" id="crescent">
+      <img src="./assets/img/icons/cabaret.svg" alt="Crescent Rounds">
+      <label for="crescent">Crescent Rounds</label>
+    </div>
+  </div>
+</div>
+<script>
+  function selectLayout(el) {
+    document.querySelectorAll('.layout-option').forEach(opt => opt.classList.remove('active'));
+    el.classList.add('active');
+    el.querySelector('input[type="radio"]').checked = true;
+  }
+</script>
+</div> -->
+
                   <div class="col-md-12 my-3 d-flex gap-5">
                     <div class="form-check">
                       <label class="form-check-label" for="banquet">
-                        <img style="height:50px; width:auto;" src="./assets/img/icons/banquet.svg" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="./assets/img/icons/banquet.svg" alt="image"><br>
                         banquet
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="banquet">
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="cabaret">
-                        <img style="height:50px; width:auto;" src="./assets/img/icons/cabaret.svg" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="./assets/img/icons/cabaret.svg" alt="image"><br>
                         cabaret
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="cabaret" checked>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="class">
-                        <img style="height:50px; width:auto;" src="./assets/img/icons/class-room.svg" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="./assets/img/icons/class-room.svg" alt="image"><br>
                         class-room
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="class" checked>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="meeting">
-                        <img style="height:50px; width:auto;" src="./assets/img/icons/meeting-room.svg" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="./assets/img/icons/meeting-room.svg" alt="image"><br>
                         meeting-room
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="meeting" checked>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="theater">
-                        <img style="height:50px; width:auto;" src="./assets/img/icons/theater.svg" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="./assets/img/icons/theater.svg" alt="image"><br>
                         theater
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="theater" checked>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="uroom">
-                        <img style="height:50px; width:auto;" src="./assets/img/icons/u-room.svg" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="./assets/img/icons/u-room.svg" alt="image"><br>
                         u-room
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="uroom" checked>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="Dont">
-                        <img style="height:50px; width:auto;" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/symbol_questionmark.png" alt="image"><br>
+                        <img style="height:30px; width:auto;" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/symbol_questionmark.png" alt="image"><br>
                         I Dont know Yet
                       </label>
                       <input class="form-check-input" type="radio" name="radioDefault" id="Dont" checked>
