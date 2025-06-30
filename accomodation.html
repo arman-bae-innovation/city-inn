@@ -63,10 +63,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./accomodation.html">Accommodation</a>
+              <a class="nav-link" href="./accomodation.html">Accommodation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./dining.html">Dining</a>
@@ -75,13 +75,20 @@
               <a class="nav-link" href="./event.html">Event's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./tourism.html">Tourism</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./about.html">About</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./gallery.html">GALLERY</a></li>
+                <li><a class="dropdown-item" href="#">REVIEWS</a></li>
+                <li><a class="dropdown-item" href="./tourism.html#surrounding">NEARBY SIGHTS</a></li>
+                <li><a class="dropdown-item" href="./policy.html">PRIVACY POLICY</a></li>
+                <li><a class="dropdown-item" href="./tearms.html">TERMS & CONDITION</a></li>
+                <li><a class="dropdown-item" href="./tourism.html#emergency_contact">EMERGENCY CONTACT</a></li>
+              </ul>
             </li>
           </ul>
           <a href="./contact.html" class="btn btn-success rounded-pill px-3">
@@ -112,6 +119,480 @@
                   <div class="card-body">
 
                     <h4 class="card-title fw-bold">Deluxe</h4>
+                    
+                    <p class="mt-3 mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
+                      <i class="bi bi-wifi fs-3" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot fs-3" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin fs-3" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display fs-3" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar fs-3" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key fs-3" data-bs-toggle="tooltip" title="In-room safe"></i>
+                    </div>
+
+                    <p class="mt-3 mb-1">Prohibited</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-start gap-4 ps-3">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Vistor" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                    </div>
+
+                    <div class="py-1 d-flex justify-content-between">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
+                      <a class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="collapse" href="#collapseDeluxe" role="button" aria-expanded="false" aria-controls="collapseDeluxe">Room Tariff</a>
+                    </div>
+
+                    <div class="collapse" id="collapseDeluxe">
+                      <div class="card card-body">
+                        
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house fs-3" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people fs-3" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-center">
+                            <i class="bi bi-cash-coin fs-3" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Single</div>
+                          <div class="col-2 text-center">1</div>
+                          <div class="col-4 text-center">BDT 2800</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Couple</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3500</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Twin</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3800</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">Deluxe Family</div>
+                          <div class="col-2 text-center">4</div>
+                          <div class="col-4 text-center">BDT 5800</div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-12 text-center text-danger fw-bold" style="font-size: 13px;">
+                            * 05% service charge + 15% vat will be added. For room service 15% service charge.
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a href="./book_now1.html" class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" style="border-radius: 20px 20px 0px 0px;" alt="room">
+                  <div class="card-body">
+
+                    <h4 class="card-title fw-bold">Platinum Suite</h4>
+                    
+                    <p class="mt-3 mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
+                      <i class="bi bi-wifi fs-3" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot fs-3" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin fs-3" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display fs-3" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar fs-3" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key fs-3" data-bs-toggle="tooltip" title="In-room safe"></i>
+                    </div>
+
+                    <p class="mt-3 mb-1">Prohibited</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-start gap-4 ps-3">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Vistor" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                    </div>
+
+                    <div class="py-1 d-flex justify-content-between">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
+                      <a class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="collapse" href="#collapseDeluxe" role="button" aria-expanded="false" aria-controls="collapseDeluxe">Room Tariff</a>
+                    </div>
+
+                    <div class="collapse" id="collapseDeluxe">
+                      <div class="card card-body">
+                        
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house fs-3" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people fs-3" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-center">
+                            <i class="bi bi-cash-coin fs-3" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Single</div>
+                          <div class="col-2 text-center">1</div>
+                          <div class="col-4 text-center">BDT 2800</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Couple</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3500</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Twin</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3800</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">Deluxe Family</div>
+                          <div class="col-2 text-center">4</div>
+                          <div class="col-4 text-center">BDT 5800</div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-12 text-center text-danger fw-bold" style="font-size: 13px;">
+                            * 05% service charge + 15% vat will be added. For room service 15% service charge.
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a href="./book_now1.html" class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" style="border-radius: 20px 20px 0px 0px;" alt="room">
+                  <div class="card-body">
+
+                    <h4 class="card-title fw-bold">Executive Suite</h4>
+                    
+                    <p class="mt-3 mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
+                      <i class="bi bi-wifi fs-3" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot fs-3" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin fs-3" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display fs-3" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar fs-3" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key fs-3" data-bs-toggle="tooltip" title="In-room safe"></i>
+                    </div>
+
+                    <p class="mt-3 mb-1">Prohibited</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-start gap-4 ps-3">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Vistor" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                    </div>
+
+                    <div class="py-1 d-flex justify-content-between">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
+                      <a class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="collapse" href="#collapseDeluxe" role="button" aria-expanded="false" aria-controls="collapseDeluxe">Room Tariff</a>
+                    </div>
+
+                    <div class="collapse" id="collapseDeluxe">
+                      <div class="card card-body">
+                        
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house fs-3" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people fs-3" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-center">
+                            <i class="bi bi-cash-coin fs-3" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Single</div>
+                          <div class="col-2 text-center">1</div>
+                          <div class="col-4 text-center">BDT 2800</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Couple</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3500</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Twin</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3800</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">Deluxe Family</div>
+                          <div class="col-2 text-center">4</div>
+                          <div class="col-4 text-center">BDT 5800</div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-12 text-center text-danger fw-bold" style="font-size: 13px;">
+                            * 05% service charge + 15% vat will be added. For room service 15% service charge.
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a href="./book_now1.html" class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" style="border-radius: 20px 20px 0px 0px;" alt="room">
+                  <div class="card-body">
+
+                    <h4 class="card-title fw-bold">Super Deluxe</h4>
+                    
+                    <p class="mt-3 mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
+                      <i class="bi bi-wifi fs-3" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot fs-3" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin fs-3" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display fs-3" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar fs-3" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key fs-3" data-bs-toggle="tooltip" title="In-room safe"></i>
+                    </div>
+
+                    <p class="mt-3 mb-1">Prohibited</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-start gap-4 ps-3">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Vistor" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                    </div>
+
+                    <div class="py-1 d-flex justify-content-between">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
+                      <a class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="collapse" href="#collapseDeluxe" role="button" aria-expanded="false" aria-controls="collapseDeluxe">Room Tariff</a>
+                    </div>
+
+                    <div class="collapse" id="collapseDeluxe">
+                      <div class="card card-body">
+                        
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house fs-3" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people fs-3" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-center">
+                            <i class="bi bi-cash-coin fs-3" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Single</div>
+                          <div class="col-2 text-center">1</div>
+                          <div class="col-4 text-center">BDT 2800</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Couple</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3500</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Twin</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3800</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">Deluxe Family</div>
+                          <div class="col-2 text-center">4</div>
+                          <div class="col-4 text-center">BDT 5800</div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-12 text-center text-danger fw-bold" style="font-size: 13px;">
+                            * 05% service charge + 15% vat will be added. For room service 15% service charge.
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a href="./book_now1.html" class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" style="border-radius: 20px 20px 0px 0px;" alt="room">
+                  <div class="card-body">
+
+                    <h4 class="card-title fw-bold">City Suite</h4>
+                    
+                    <p class="mt-3 mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
+                      <i class="bi bi-wifi fs-3" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot fs-3" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin fs-3" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display fs-3" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar fs-3" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key fs-3" data-bs-toggle="tooltip" title="In-room safe"></i>
+                    </div>
+
+                    <p class="mt-3 mb-1">Prohibited</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-start gap-4 ps-3">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Vistor" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                    </div>
+
+                    <div class="py-1 d-flex justify-content-between">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
+                      <a class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="collapse" href="#collapseDeluxe" role="button" aria-expanded="false" aria-controls="collapseDeluxe">Room Tariff</a>
+                    </div>
+
+                    <div class="collapse" id="collapseDeluxe">
+                      <div class="card card-body">
+                        
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house fs-3" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people fs-3" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-center">
+                            <i class="bi bi-cash-coin fs-3" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Single</div>
+                          <div class="col-2 text-center">1</div>
+                          <div class="col-4 text-center">BDT 2800</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Couple</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3500</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Twin</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3800</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">Deluxe Family</div>
+                          <div class="col-2 text-center">4</div>
+                          <div class="col-4 text-center">BDT 5800</div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-12 text-center text-danger fw-bold" style="font-size: 13px;">
+                            * 05% service charge + 15% vat will be added. For room service 15% service charge.
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a href="./book_now1.html" class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" style="border-radius: 20px 20px 0px 0px;" alt="room">
+                  <div class="card-body">
+
+                    <h4 class="card-title fw-bold">Suite</h4>
+                    
+                    <p class="mt-3 mb-1">Main amenities</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-around">
+                      <i class="bi bi-wifi fs-3" data-bs-toggle="tooltip" title="Free Wi-Fi"></i>
+                      <i class="bi bi-cup-hot fs-3" data-bs-toggle="tooltip" title="Coffee and tea facilities"></i>
+                      <i class="bi bi-plugin fs-3" data-bs-toggle="tooltip" title="Professional hair dryer"></i>
+                      <i class="bi bi-display fs-3" data-bs-toggle="tooltip" title="TV with mirror casting"></i>
+                      <i class="bi bi-window-sidebar fs-3" data-bs-toggle="tooltip" title="Work desk"></i>
+                      <i class="bi bi-key fs-3" data-bs-toggle="tooltip" title="In-room safe"></i>
+                    </div>
+
+                    <p class="mt-3 mb-1">Prohibited</p>
+                    <div class="room-facilities-icon mb-3 d-flex justify-content-start gap-4 ps-3">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Vistor" alt="logo">
+                      <img class="img-fluid" style="height: 30px; width: auto;" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                    </div>
+
+                    <div class="py-1 d-flex justify-content-between">
+                      <a href="#" class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="modal" data-bs-target="#Deluxe">Room Details</a>
+                      <a class="text-uppercase fw-bold text-success hover-underline" data-bs-toggle="collapse" href="#collapseDeluxe" role="button" aria-expanded="false" aria-controls="collapseDeluxe">Room Tariff</a>
+                    </div>
+
+                    <div class="collapse" id="collapseDeluxe">
+                      <div class="card card-body">
+                        
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6 text-start">
+                            <i class="bi bi-house fs-3" data-bs-toggle="tooltip" title="Room"></i>
+                          </div>
+                          <div class="col-2 text-center">
+                            <i class="bi bi-people fs-3" data-bs-toggle="tooltip" title="Maximum Number Of Guest"></i>
+                          </div>
+                          <div class="col-4 text-center">
+                            <i class="bi bi-cash-coin fs-3" data-bs-toggle="tooltip" title="Price"></i>
+                          </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Single</div>
+                          <div class="col-2 text-center">1</div>
+                          <div class="col-4 text-center">BDT 2800</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Couple</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3500</div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #00000030;">
+                          <div class="col-6">Deluxe Twin</div>
+                          <div class="col-2 text-center">2</div>
+                          <div class="col-4 text-center">BDT 3800</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">Deluxe Family</div>
+                          <div class="col-2 text-center">4</div>
+                          <div class="col-4 text-center">BDT 5800</div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-12 text-center text-danger fw-bold" style="font-size: 13px;">
+                            * 05% service charge + 15% vat will be added. For room service 15% service charge.
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a href="./book_now1.html" class="btn btn-success text-uppercase rounded-pill d-block fw-bold mt-3">Book Now</a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 20px;">
+                  <img src="./assets/img/rooms/Deluxe Family.webp" class="d-block w-100" style="border-radius: 20px 20px 0px 0px;" alt="room">
+                  <div class="card-body">
+
+                    <h4 class="card-title fw-bold">Standard</h4>
                     
                     <p class="mt-3 mb-1">Main amenities</p>
                     <div class="room-facilities-icon mb-3 d-flex justify-content-around">
@@ -345,15 +826,15 @@
   
                           <h5 class="mt-4 mb-3">Prohibited</h5>
                           <div class="row justify-content-start">
-                            
+                       
                             <div class="col-md-2 col-3 p-md-4 p-3">
-                              <img class="img-fluid" src="./assets/img/amenities/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
+                              <img class="img-fluid" src="./assets/img/amenities/no/no-animals.png" data-bs-toggle="tooltip" title="Pets" alt="logo">
                             </div>
                             <div class="col-md-2 col-3 p-md-4 p-3">
-                              <img class="img-fluid" src="./assets/img/amenities/ban.png" data-bs-toggle="tooltip" title="Visitor" alt="logo">
+                              <img class="img-fluid" src="./assets/img/amenities/no/no-visiting.png" data-bs-toggle="tooltip" title="Visitor" alt="logo">
                             </div>
                             <div class="col-md-2 col-3 p-md-4 p-3">
-                              <img class="img-fluid" src="./assets/img/amenities/no-smoking.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
+                              <img class="img-fluid" src="./assets/img/amenities/no/no-smoke.png" data-bs-toggle="tooltip" title="Smoking" alt="logo">
                             </div>
 
                           </div>
