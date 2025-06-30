@@ -732,3 +732,7 @@ footer{
     position: relative !important;
     margin-top: -1px !important;
 }
+.form-check-input:checked {
+    background-color: #38A352;
+    border-color: #38A352;
+}
