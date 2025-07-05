@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.min.css" integrity="sha512-8hM9a+2hrLBhOuB3uiy+QIXBsu6Qk+snsP1CboFQW6pdt/yYz0IcDp/+CGv5m39r9doGUc/zw6aBpyLF6XFgzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" integrity="sha512-DzC7h7+bDlpXPDQsX/0fShhf1dLxXlHuhPBkBo/5wJWRoTU6YL7moeiNoej6q3wh5ti78C57Tu1JwTNlcgHSjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
@@ -33,10 +40,21 @@
   </head>
   <body>
 
-    <div class="time-zone-show">
+    <div class="dropdown-hover clock-dropdown-hover">
+        <div class="btn-group dropup">
+            <button type="button" class="btn btn-outline-success clock-btn px-0 rounded">
+                <i class="bi bi-stopwatch fs-4"></i>
+            </button>
+            <ul class="dropdown-menu clock-dropdown-menu p-0">
+                <div style="width: 110px;" class="mb-1 bg-green text-white p-2 rounded text-center fs-12"><span id="liveTime">--:--</span> <br> Live Time</div>
+                <div style="width: 110px;" class="bg-green text-white p-2 rounded text-center fs-12"><span id="khulnaTime">--:--</span> <br> Khulna, BD Time</div>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="time-zone-show">
       <div class="mb-1 bg-green p-1 rounded"><span id="liveTime">--:--</span> <br> Live Time</div>
       <div class="bg-green p-1 rounded"><span id="khulnaTime">--:--</span> <br> Khulna, BD Time</div>
-    </div>
+    </div> -->
     <script>
       function updateTimes() {
         const userDate = new Date();
@@ -84,7 +102,7 @@
               <a class="nav-link active" href="./about.html">About</a>
             </li>
           </ul>
-          <a href="./contact.html" class="btn btn-success rounded-pill px-3">
+          <a href="./contact.html" class="btn btn-success rounded-pill px-3 mb-md-0 mb-4">
             Contact
             <i class="bi bi-arrow-right-short"></i>
           </a>

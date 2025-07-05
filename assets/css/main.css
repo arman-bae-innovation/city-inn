@@ -750,3 +750,33 @@ footer{
 .event-list-ul li{
   padding: 2px 0px;
 }
+
+.clock-btn{
+  width:40px;
+  height:40px;
+  padding:0px;
+  background-color: #1F8B48; 
+  color: #fff;
+  border: none;
+}
+.clock-dropdown-hover{
+  width:40px;
+  height:40px;
+  position:fixed;
+  left:10px;
+  bottom:10px;
+  z-index:9999;
+}
+
+.clock-dropdown-hover:hover .clock-dropdown-menu {
+    display: block;
+    margin-bottom: 5px;
+}
+.clock-dropdown-menu {
+    background: transparent; 
+    border: none;
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+}
