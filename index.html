@@ -23,8 +23,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
@@ -52,10 +52,23 @@
   </head>
   <body>
 
-    <div class="time-zone-show">
+    <!-- left side social icons start -->
+    <div style="width:40px;height:40px;position:fixed;left:10px;bottom:10px;z-index:9999;">
+        <div class="btn-group dropup">
+        <button type="button" style="width:40px;height:40px;padding:0px;background-color: #1F8B48; color: #fff;" class="btn btn-priamry px-0 rounded" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-stopwatch fs-4"></i>
+        </button>
+        <ul class="dropdown-menu p-0" style="background: transparent; border: none;">
+            <div style="width: 110px;" class="mb-1 bg-green text-white p-2 rounded text-center fs-12"><span id="liveTime">--:--</span> <br> Live Time</div>
+            <div style="width: 110px;" class="bg-green text-white p-2 rounded text-center fs-12"><span id="khulnaTime">--:--</span> <br> Khulna, BD Time</div>
+        </ul>
+        </div>
+    </div>
+
+    <!-- <div class="time-zone-show">
       <div class="mb-1 bg-green p-1 rounded"><span id="liveTime">--:--</span> <br> Live Time</div>
       <div class="bg-green p-1 rounded"><span id="khulnaTime">--:--</span> <br> Khulna, BD Time</div>
-    </div>
+    </div> -->
     <script>
       function updateTimes() {
         const userDate = new Date();
@@ -512,15 +525,11 @@
       <div class="container-fluid py-2">
         <div class="row align-items-center">
 
-          <div class="col-md-3 text-center fs-3" style="
-            font-family: 'Exo 2', sans-serif;
-            font-family: 'Merienda', cursive;
-            color: white;
-            ">
+          <div class="col-md-3 text-center fs-3">
             <i> 
-              <p class="mb-0">Symbol</p>
-              <p class="mb-0" style="margin-top: -10px;">of</p>
-              <p class="mb-0" style="margin-top: -10px;">Elegance</p>
+              <p class="mb-0 side-slogan">Symbol</p>
+              <p class="mb-0 side-slogan" style="margin-top: -10px;">of</p>
+              <p class="mb-0 side-slogan" style="margin-top: -10px;">Elegance</p>
             </i>
           </div>
 

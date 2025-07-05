@@ -18,6 +18,14 @@
   /* color: black;  */
 }
 
+*{
+  font-family: "Inter", sans-serif;
+}
+.side-slogan{
+  font-family: 'Exo 2', sans-serif;
+  font-family: 'Merienda', cursive;
+  color: white;
+}
 .navbar{
   background-color: var(--navbar-bg);
 }
