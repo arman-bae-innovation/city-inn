@@ -653,6 +653,73 @@
       </div>
     </section> -->
 
+
+    <!-- <section id="stat" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-md-3 col-10">
+            <div class="statBox">
+              <span class="fs-1">80 +</span> 
+              <span class="mt-md-2 mt-0 ms-3">Dream Stay</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-10">
+            <div class="statBox">
+              <span class="fs-1">98 %</span> 
+              <span class="mt-md-2 mt-0 ms-3">Luxe Lodge</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-10">
+            <div class="statBox">
+              <span class="fs-1">85 %</span> 
+              <span class="mt-md-2 mt-0 ms-3">Complete Work</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-10">
+            <div class="statBox" style="border-right: none; border-bottom: none;">
+              <span class="fs-1">75 +</span> 
+              <span class="mt-md-2 mt-0 ms-3">Team member</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section> -->
+
+    <section id="counter">
+      <div class="container py-4">
+        <div class="row text-center justify-content-around">
+
+          <div class="col-md-3">
+            <h1 class="counter-back-text">15</h1>
+            <h4 class="counter-item d-inline">15</h4>
+            <h4 class="d-inline"></h4>
+            <p>YEARS OF EXELLENCE</p>
+          </div>
+          <div class="col-md-3">
+            <h1 class="counter-back-text">135+</h1>
+            <h4 class="counter-item d-inline">135</h4>
+            <h4 class="d-inline">+</h4>
+            <p>ACCOMODATIONS</p>
+          </div>
+          <div class="col-md-3">
+            <h1 class="counter-back-text">4+</h1>
+            <h4 class="counter-item d-inline">4</h4>
+            <h4 class="d-inline">+</h4>
+            <p>HALL ROOMS</p>
+          </div>
+          <div class="col-md-3">
+            <h1 class="counter-back-text">95%</h1>
+            <h4 class="counter-item d-inline">95</h4>
+            <h4 class="d-inline">%</h4>
+            <p>TRUSTED TESTING SERVICE</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="about pb-5" style="background-image: url('./assets/img/aboutBG.png');">
       <div class="container pt-5">
         <div class="row justify-content-around align-items-center">
@@ -666,6 +733,39 @@
           <div class="col-md-5 col-8 mt-5">
             <div class="position-relative" data-aos="flip-left">
               <div class="aboutImage" style="background-image: url('./assets/img/about1.jpg');">
+              </div>
+              <div class="aboutImageBack">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-around align-items-center">
+          <div class="col-md-5 col-8 mt-5">
+            <div class="position-relative" data-aos="flip-left">
+              <div class="aboutImage" style="background-image: url('./assets/img/wood.jpg');">
+              </div>
+              <div class="aboutImageBack">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-10 text-md-start text-center" data-aos="slide-up">
+            <div>
+              <h3>Why you should choose City Inn</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur laborum laboriosam soluta? Cumque quibusdam, asperiores inventore ducimus culpa nobis sapiente, voluptatum cum eius doloremque exercitationem nostrum omnis, beatae dicta laborum?</p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-around align-items-center">
+          <div class="col-md-5 col-10 text-md-start text-center" data-aos="slide-up">
+            <div>
+              <h3 class="mb-4">Head Of Department</h3>
+              <p><a href="#">AGM: +880 0000 00 00 00</a></p>
+              <a href="#">DGM: +880 0000 00 00 00</a>
+            </div>
+          </div>
+          <div class="col-md-5 col-8 mt-5">
+            <div class="position-relative" data-aos="flip-left">
+              <div class="aboutImage" style="background-image: url('./assets/img/rece.jpg');">
               </div>
               <div class="aboutImageBack">
               </div>
@@ -820,6 +920,39 @@
             format: 'dd mmmm yyyy'
         });
     </script>
+
+    <!--COUNTER START-->
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // When the counter section is in viewport, start the counting animation
+        $('#counter').waypoint(
+          function () {
+            $('.counter-item').each(function () {
+              $(this).prop('Counter', 0).animate(
+                {
+                  Counter: $(this).text().replace(/,/g, ''),
+                },
+                {
+                  duration: 3000,
+                  easing: 'swing',
+                  step: function (now) {
+                    $(this).text(Math.ceil(now).toLocaleString());
+                  },
+                }
+              );
+            });
+            this.destroy();
+          },
+          {
+            offset: '75%',
+          }
+        );
+      });
+    </script>
+    <!--COUNTER END -->
 
   </body>
 </html>

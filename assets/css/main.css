@@ -780,3 +780,13 @@ footer{
     bottom: 100%;
     left: 0;
 }
+
+
+#counter{
+  background-color: #DFD824;
+  color: #000;
+}
+.counter-back-text{
+  color: #44444420;
+  margin-bottom: -20px;
+}
