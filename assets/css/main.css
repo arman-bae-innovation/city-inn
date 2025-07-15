@@ -790,3 +790,22 @@ footer{
   color: #44444420;
   margin-bottom: -20px;
 }
+
+.testimonial-star{
+  color: #FF8A00;
+}
+.testimonial-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 5px solid #38A352;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.testimonial-name{
+  color: #2E3A54;
+  font-size: 20px;
+}
