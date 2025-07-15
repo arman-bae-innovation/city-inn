@@ -243,6 +243,19 @@ function updateThemeByTime() {
   const darkModeStart = 19 * 60 + 0;
   const isDarkTime = currentMinutes >= darkModeStart || currentMinutes < darkModeEnd;
   document.documentElement.classList.toggle('dark-mode', isDarkTime);
+
+  // Handle logo switch
+  const mainLogo = document.querySelector('.mainLogo');
+  const whiteLogo = document.querySelector('.whiteLogo');
+
+  if (isDarkTime) {
+    mainLogo.classList.add('d-none');
+    whiteLogo.classList.remove('d-none');
+  } else {
+    mainLogo.classList.remove('d-none');
+    whiteLogo.classList.add('d-none');
+  }
+
 }
 updateThemeByTime();
 setInterval(updateThemeByTime, 1000);
