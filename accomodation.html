@@ -34,8 +34,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=2">
-    <link rel="stylesheet" href="./assets/css/mobile.css">
+    <link rel="stylesheet" href="./assets/css/main.css?v=4">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=4">
 
   </head>
   <body>
@@ -46,8 +46,8 @@
 }
 .currency-link{
   border: 2px solid #38A352;
-  color: white;
-  background-color: #38A352;
+  color: #38A352;
+  background-color: #fff;
   border-radius: 30px;
   padding: 2px 10px;
 }
@@ -140,12 +140,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            <li class="nav-item me-5">
-              <a class="nav-link">
-                <span class="currency-link" id="bdt-toggle">৳ BDT</span>
-                <span class="currency-link" id="usd-toggle">$ USD</span>
-              </a>
-            </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
             </li>
@@ -173,6 +167,12 @@
                 <li><a class="dropdown-item" href="./tearms.html">TERMS & CONDITION</a></li>
                 <li><a class="dropdown-item" href="./tourism.html#emergency_contact">EMERGENCY CONTACT</a></li>
               </ul>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link">
+                <span class="currency-link" id="bdt-toggle">৳ BDT</span>
+                <span class="currency-link" id="usd-toggle">$ USD</span>
+              </a>
             </li>
           </ul>
           <a href="./contact.html" class="btn btn-success rounded-pill px-3 mb-md-0 mb-4">
@@ -1022,7 +1022,13 @@
                               <img style="height: 20px; width: auto; padding-right: 5px;" src="./assets/img/amenities/slumber.png" alt="icon">
                               1 Single Bed
                             </span>
-                            <span class="room-badge bg-dark text-white">BDT 2800 ++</span>
+                            <div class="mt-3">
+                              <span class="room-badge fs-4 bg-info text-white">
+                                <span class="bdt-show">BDT 2800</span>
+                                <span class="usd-show">USD 25</span>
+                                ++
+                              </span>
+                            </div>
                           </div>
                           <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                         
@@ -1149,7 +1155,13 @@
                               <img style="height: 20px; width: auto; padding-right: 5px;" src="./assets/img/amenities/slumber.png" alt="icon">
                               1 Couple Bed
                             </span>
-                            <span class="room-badge bg-dark text-white">BDT 3500</span>
+                            <div class="mt-3">
+                              <span class="room-badge fs-4 bg-info text-white">
+                                <span class="bdt-show">BDT 2500</span>
+                                <span class="usd-show">USD 30</span>
+                                ++
+                              </span>
+                            </div>
                           </div>
                           <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                         
@@ -1276,7 +1288,13 @@
                               <img style="height: 20px; width: auto; padding-right: 5px;" src="./assets/img/amenities/slumber.png" alt="icon">
                               2 Single Bed
                             </span>
-                            <span class="room-badge bg-dark text-white">BDT 3800</span>
+                            <div class="mt-3">
+                              <span class="room-badge fs-4 bg-info text-white">
+                                <span class="bdt-show">BDT 3800</span>
+                                <span class="usd-show">USD 33</span>
+                                ++
+                              </span>
+                            </div>
                           </div>
                           <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                         
@@ -1403,7 +1421,13 @@
                               <img style="height: 20px; width: auto; padding-right: 5px;" src="./assets/img/amenities/slumber.png" alt="icon">
                               2 Couple Bed
                             </span>
-                            <span class="room-badge bg-dark text-white">BDT 5800</span>
+                            <div class="mt-3">
+                              <span class="room-badge fs-4 bg-info text-white">
+                                <span class="bdt-show">BDT 5800</span>
+                                <span class="usd-show">USD 45</span>
+                                ++
+                              </span>
+                            </div>
                           </div>
                           <p>Choose between a king or two double beds with elegant linens in our Superior Rooms. Get work done in the spacious work desk area, lounge in comfortable armchairs, and take a break with a hot drink from the in-room coffee and tea facilities. After a long day, unwind in our refreshing rain showers and stream your favorite shows on the TV with mirror casting. Additional amenities include double-glazed windows and an in-room safe to secure your valuables.</p>
                         
