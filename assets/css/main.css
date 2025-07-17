@@ -821,3 +821,25 @@ footer{
   color: #38A352;
   font-size: 20px;
 }
+
+
+/* BDT USD TOGGLE START  */
+.bdt-toggle-btn, .usd-toggle-btn {
+  color: #38A352;
+  border: 2px solid #38A352;
+  padding: 0px 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.bdt-toggle-btn {
+  border-radius: 30px 0px 0px 30px;
+}
+.usd-toggle-btn {
+  border-radius: 0px 30px 30px 0px;
+}
+.bdt-toggle-btn.active,
+.usd-toggle-btn.active {
+  color: #fff;
+  background-color: #38A352;
+}
+/* BDT USD TOGGLE END  */

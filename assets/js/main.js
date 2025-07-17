@@ -36,7 +36,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// BDT USD TOGGLE START
+document.addEventListener("DOMContentLoaded", function () {
+    const bdtToggle = document.getElementById("bdt-toggle");
+    const usdToggle = document.getElementById("usd-toggle");
+    const bdtElements = document.querySelectorAll(".bdt-show");
+    const usdElements = document.querySelectorAll(".usd-show");
 
+    function showCurrency(currency) {
+      const isBDT = currency === "BDT";
+
+      bdtElements.forEach(el => el.style.display = isBDT ? "inline" : "none");
+      usdElements.forEach(el => el.style.display = isBDT ? "none" : "inline");
+
+      bdtToggle.classList.toggle("active", isBDT);
+      usdToggle.classList.toggle("active", !isBDT);
+
+      localStorage.setItem("currency", currency);
+    }
+
+    const savedCurrency = localStorage.getItem("currency") || "BDT";
+    showCurrency(savedCurrency);
+
+    bdtToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      showCurrency("BDT");
+    });
+
+    usdToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      showCurrency("USD");
+    });
+});
+// BDT USD TOGGLE END
 
 
 
@@ -381,3 +413,5 @@ document.addEventListener("visibilitychange", function () {
 
 // ROOM GUSET INCREASE AND DECREASE END 
  
+
+

@@ -34,68 +34,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=4">
+    <link rel="stylesheet" href="./assets/css/main.css?v=4.1">
     <link rel="stylesheet" href="./assets/css/mobile.css?v=4">
 
   </head>
   <body>
 
-<style>
-.bdt-show, .usd-show {
-  transition: all 0.3s ease;
-}
-.currency-link{
-  border: 2px solid #38A352;
-  color: #38A352;
-  background-color: #fff;
-  border-radius: 30px;
-  padding: 2px 10px;
-}
-</style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const bdtToggle = document.getElementById("bdt-toggle");
-    const usdToggle = document.getElementById("usd-toggle");
-    const bdtElements = document.querySelectorAll(".bdt-show");
-    const usdElements = document.querySelectorAll(".usd-show");
 
-    function showCurrency(currency) {
-      if (currency === "BDT") {
-        // Show BDT prices, hide USD
-        bdtElements.forEach(el => el.style.display = "inline");
-        usdElements.forEach(el => el.style.display = "none");
 
-        // Hide BDT toggle button, show USD
-        bdtToggle.style.display = "none";
-        usdToggle.style.display = "inline";
-      } else {
-        // Show USD prices, hide BDT
-        bdtElements.forEach(el => el.style.display = "none");
-        usdElements.forEach(el => el.style.display = "inline");
 
-        // Hide USD toggle button, show BDT
-        usdToggle.style.display = "none";
-        bdtToggle.style.display = "inline";
-      }
 
-      // Store the selected currency in localStorage
-      localStorage.setItem("currency", currency);
-    }
 
-    // Load saved currency preference from localStorage
-    const savedCurrency = localStorage.getItem("currency") || "BDT";
-    showCurrency(savedCurrency);
-
-    // Toggle event listeners
-    bdtToggle.addEventListener("click", function () {
-      showCurrency("BDT");
-    });
-
-    usdToggle.addEventListener("click", function () {
-      showCurrency("USD");
-    });
-  });
-</script>
 <!-- <span class="bdt-show">BDT 120</span>
 <span class="usd-show">USD 1</span> -->
 
@@ -161,19 +110,22 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="./gallery.html">GALLERY</a></li>
-                <li><a class="dropdown-item" href="./index.html#reviews">REVIEWS</a></li>
+                <li><a class="dropdown-item" href="./reviews.html">REVIEWS</a></li>
                 <li><a class="dropdown-item" href="./tourism.html#surrounding">NEARBY SIGHTS</a></li>
                 <li><a class="dropdown-item" href="./policy.html">PRIVACY POLICY</a></li>
-                <li><a class="dropdown-item" href="./tearms.html">TERMS & CONDITION</a></li>
                 <li><a class="dropdown-item" href="./tourism.html#emergency_contact">EMERGENCY CONTACT</a></li>
               </ul>
             </li>
-            <li class="nav-item ms-5">
-              <a class="nav-link">
-                <span class="currency-link" id="bdt-toggle">৳ BDT</span>
-                <span class="currency-link" id="usd-toggle">$ USD</span>
+
+            <li class="nav-item d-flex align-items-center ms-md-5 ms-0">
+              <a href="#" id="bdt-toggle" class="bdt-toggle-btn">
+                ৳ BDT
+              </a>
+              <a href="#" id="usd-toggle" class="usd-toggle-btn active">
+                $ USD
               </a>
             </li>
+
           </ul>
           <a href="./contact.html" class="btn btn-success rounded-pill px-3 mb-md-0 mb-4">
             Contact
@@ -1706,6 +1658,8 @@
             }
         });
     </script>
+
+
 
   </body>
 </html>
